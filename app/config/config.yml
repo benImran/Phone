@@ -15,6 +15,7 @@ easy_admin:
         - PhoneBundle\Entity\Product
         - PhoneBundle\Entity\Brand
         - PhoneBundle\Entity\Category
+        - PhoneBundle\Entity\Type
     design:
         brand_color: 'rgba(26, 188, 156, 0.85)'
     site_name: '<img src="http://symfony.com/logos/symfony_white_01.png" />'

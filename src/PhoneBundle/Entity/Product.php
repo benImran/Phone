@@ -35,12 +35,12 @@ class Product
      */
     private $reference;
 
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="picture", type="string", length=255)
+     * @ORM\Column(type="string")
      */
-    private $picture;
+    private $image;
+
 
     /**
      * @var string
@@ -371,6 +371,22 @@ class Product
     public function getVisible()
     {
         return $this->visible;
+    }
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
     }
 }
 
