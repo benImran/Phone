@@ -1,0 +1,43 @@
+easy_admin:
+    entities:
+        Product:
+            class: PhoneBundle\Entity\Product
+            list:
+                fields:
+                    - title
+                    - reference
+                    - - { property: 'picture', type: 'picture', base_path: '%app.path.product_pictures%' }
+                    - abstarct
+                    - rate
+                    - stock
+                    - brand
+                    - detail
+                    - type
+                    - category
+                    - visible
+            show:
+                fields:
+                    - title
+                    - reference
+                    - - { property: 'picture', type: 'picture', base_path: '%app.path.product_pictures%' }
+                    - abstarct
+                    - rate
+                    - stock
+                    - brand
+                    - detail
+                    - type
+                    - category
+                    - visible
+            form:
+                fields:
+                    - title
+                    - { property: 'imageFile', type: 'vich_file' }
+                    - reference
+                    - abstract
+                    - rate
+                    - stock
+                    - brand
+                    - { type: 'divider' }
+                    - { type: 'divider' }
+                    - { property: 'body', type: 'ckeditor' }
+                    - visible
