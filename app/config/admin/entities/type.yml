@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        Type:
+            class: PhoneBundle\Entity\Type
+            list:
+                fields:
+                    - id
+                    - name

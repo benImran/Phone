@@ -1,0 +1,18 @@
+easy_admin:
+    entities:
+        Brand:
+            class: PhoneBundle\Entity\Brand
+            list:
+                fields:
+                    - id
+                    - name
+                    - { property: 'image', type: 'image', base_path: '%app.path.brand_images%' }
+            show:
+                fields:
+                    - name
+                    - { property: 'image', type: 'image', base_path: '%app.path.brand_images%' }
+            form:
+                fields:
+                    - name
+                    - { property: 'imageFile', type: 'vich_image' }
+

@@ -3,12 +3,16 @@
 namespace PhoneBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * Product
  *
  * @ORM\Table(name="product")
  * @ORM\Entity(repositoryClass="PhoneBundle\Repository\ProductRepository")
+ * @Vich\Uploadable
  */
 class Product
 {
@@ -20,6 +24,7 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
 
     /**
      * @var string
@@ -37,10 +42,22 @@ class Product
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $image;
 
+    /**
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @var string
@@ -48,6 +65,7 @@ class Product
      * @ORM\Column(name="abstract", type="string", length=80)
      */
     private $abstract;
+
 
     /**
      * @var int
@@ -84,20 +102,16 @@ class Product
      */
     private $type;
 
+
     /**
-     * @var string
-     *
-     * @ORM\Column(name="category", type="string", length=255)
+     * @ORM\Column(type="string")
      */
     private $category;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="visible", type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
     private $visible;
-
 
     /**
      * Get id
@@ -108,6 +122,7 @@ class Product
     {
         return $this->id;
     }
+
 
     /**
      * Set title
@@ -158,30 +173,6 @@ class Product
     }
 
     /**
-     * Set picture
-     *
-     * @param string $picture
-     *
-     * @return Product
-     */
-    public function setPicture($picture)
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
-
-    /**
-     * Get picture
-     *
-     * @return string
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
      * Set abstract
      *
      * @param string $abstract
@@ -194,6 +185,7 @@ class Product
 
         return $this;
     }
+
 
     /**
      * Get abstract
@@ -372,6 +364,7 @@ class Product
     {
         return $this->visible;
     }
+
     /**
      * @return mixed
      */
@@ -379,7 +372,6 @@ class Product
     {
         return $this->image;
     }
-
     /**
      * @param mixed $image
      */
@@ -387,6 +379,43 @@ class Product
     {
         $this->image = $image;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param mixed $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+        return $this;
+    }
+
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 }
 

@@ -3,27 +3,20 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@PhoneBundle/Resources/config/services.yml" }
+    - { resource: admin/ }
 
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr_FR
-
-easy_admin:
-    entities:
-        - PhoneBundle\Entity\Product
-        - PhoneBundle\Entity\Brand
-        - PhoneBundle\Entity\Category
-        - PhoneBundle\Entity\Type
-    design:
-        brand_color: 'rgba(26, 188, 156, 0.85)'
-    site_name: '<img src="http://symfony.com/logos/symfony_white_01.png" />'
+    app.path.product_images: /uploads/images/products
+    app.path.brand_images:   /uploads/images/brands
 
 
 framework:
     #esi: ~
-    translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: [ "%locale%" ] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -81,3 +74,28 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_images:
+            uri_prefix:         '%app.path.product_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
+        brand_images:
+            uri_prefix:         '%app.path.brand_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/brands'
+
+ivory_ck_editor:
+    input_sync: true
+    default_config: base_config
+    configs:
+        base_config:
+            toolbar:
+                - { name: 'clipboard', items: [ 'Undo', 'Redo' ] }
+                - { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] }
+                - { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] }
+                - { name: 'tools', items: [ 'Maximize' ] }
+                - { name: 'document', items: [ 'Source' ] }
+                - '/'
+                - { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] }
+                - { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] }
+                - { name: 'styles', items: [ 'Format' ] }
