@@ -26,7 +26,7 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
-                default_target_path:            /bonobofriends
+                default_target_path:            /phoneuser
                 target_path_parameter:          _target_path
                 use_referer:                    false
 
@@ -39,4 +39,4 @@ security:
             - { path: ^/resetting, role: ROLE_ADMIN }
             - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/, role: ROLE_ADMIN }
-            - { path: ^//, role: ROLE_USER }
+            - { path: ^/phoneuser/, role: ROLE_USER }
