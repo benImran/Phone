@@ -41,7 +41,9 @@ easy_admin:
                     - stock
                     - { property: 'imageFile', type: 'vich_image' }
                     - brand
+                    - { type: 'divider' }
                     - { property: 'detail', type: 'ckeditor' }
+                    - { type: 'divider' }
                     - type
                     - category
 
