@@ -2,7 +2,6 @@ easy_admin:
     entities:
         Category:
             class: PhoneBundle\Entity\Category
-            list:
+            form:
                 fields:
-                    - id
                     - name

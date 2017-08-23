@@ -2,6 +2,7 @@
 
 namespace PhoneBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,6 +29,22 @@ class Type
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(
+     *     targetEntity="PhoneBundle\Entity\Product",
+     *     mappedBy="type", cascade={"remove"})
+     */
+    private $product;
+
+    public function __construct()
+    {
+        $this->product = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
 
     /**
      * Get id

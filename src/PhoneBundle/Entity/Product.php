@@ -96,15 +96,19 @@ class Product
     private $detail;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=30)
+     * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Type",
+     *     inversedBy="product")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $type;
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Category",
+     *     inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $category;
 
@@ -113,24 +117,13 @@ class Product
      */
     private $visible;
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
+
     public function getId()
     {
         return $this->id;
     }
 
 
-    /**
-     * Set title
-     *
-     * @param string $title
-     *
-     * @return Product
-     */
     public function setTitle($title)
     {
         $this->title = $title;
@@ -138,23 +131,13 @@ class Product
         return $this;
     }
 
-    /**
-     * Get title
-     *
-     * @return string
-     */
+
     public function getTitle()
     {
         return $this->title;
     }
 
-    /**
-     * Set reference
-     *
-     * @param integer $reference
-     *
-     * @return Product
-     */
+
     public function setReference($reference)
     {
         $this->reference = $reference;
@@ -162,23 +145,13 @@ class Product
         return $this;
     }
 
-    /**
-     * Get reference
-     *
-     * @return int
-     */
+
     public function getReference()
     {
         return $this->reference;
     }
 
-    /**
-     * Set abstract
-     *
-     * @param string $abstract
-     *
-     * @return Product
-     */
+
     public function setAbstract($abstract)
     {
         $this->abstract = $abstract;
@@ -187,23 +160,12 @@ class Product
     }
 
 
-    /**
-     * Get abstract
-     *
-     * @return string
-     */
     public function getAbstract()
     {
         return $this->abstract;
     }
 
-    /**
-     * Set rate
-     *
-     * @param integer $rate
-     *
-     * @return Product
-     */
+
     public function setRate($rate)
     {
         $this->rate = $rate;
@@ -211,23 +173,13 @@ class Product
         return $this;
     }
 
-    /**
-     * Get rate
-     *
-     * @return int
-     */
+
     public function getRate()
     {
         return $this->rate;
     }
 
-    /**
-     * Set stock
-     *
-     * @param string $stock
-     *
-     * @return Product
-     */
+
     public function setStock($stock)
     {
         $this->stock = $stock;
@@ -235,23 +187,13 @@ class Product
         return $this;
     }
 
-    /**
-     * Get stock
-     *
-     * @return string
-     */
+
     public function getStock()
     {
         return $this->stock;
     }
 
-    /**
-     * Set brand
-     *
-     * @param string $brand
-     *
-     * @return Product
-     */
+
     public function setBrand($brand)
     {
         $this->brand = $brand;
@@ -259,23 +201,13 @@ class Product
         return $this;
     }
 
-    /**
-     * Get brand
-     *
-     * @return string
-     */
+
     public function getBrand()
     {
         return $this->brand;
     }
 
-    /**
-     * Set detail
-     *
-     * @param string $detail
-     *
-     * @return Product
-     */
+
     public function setDetail($detail)
     {
         $this->detail = $detail;
@@ -283,23 +215,13 @@ class Product
         return $this;
     }
 
-    /**
-     * Get detail
-     *
-     * @return string
-     */
+
     public function getDetail()
     {
         return $this->detail;
     }
 
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Product
-     */
+
     public function setType($type)
     {
         $this->type = $type;
@@ -307,47 +229,27 @@ class Product
         return $this;
     }
 
-    /**
-     * Get type
-     *
-     * @return string
-     */
+
     public function getType()
     {
         return $this->type;
     }
 
-    /**
-     * Set category
-     *
-     * @param string $category
-     *
-     * @return Product
-     */
-    public function setCategory($category)
+
+    public function setCategory(Category $category)
     {
         $this->category = $category;
 
         return $this;
     }
 
-    /**
-     * Get category
-     *
-     * @return string
-     */
+
     public function getCategory()
     {
         return $this->category;
     }
 
-    /**
-     * Set visible
-     *
-     * @param string $visible
-     *
-     * @return Product
-     */
+
     public function setVisible($visible)
     {
         $this->visible = $visible;
@@ -355,43 +257,31 @@ class Product
         return $this;
     }
 
-    /**
-     * Get visible
-     *
-     * @return string
-     */
+
     public function getVisible()
     {
         return $this->visible;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getImage()
     {
         return $this->image;
     }
-    /**
-     * @param mixed $image
-     */
+
     public function setImage($image)
     {
         $this->image = $image;
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param mixed $updatedAt
-     */
+
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;

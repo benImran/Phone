@@ -29,6 +29,31 @@ class Category
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(
+     *     targetEntity="PhoneBundle\Entity\Product",
+     *     mappedBy="category")
+     */
+    private $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
 
     /**
      * Get id

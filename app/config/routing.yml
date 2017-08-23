@@ -1,7 +1,6 @@
-phone:
+app:
     resource: "@PhoneBundle/Controller/"
     type:     annotation
-    prefix:   /
 
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/"
