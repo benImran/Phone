@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        Orders:
+            class: PhoneBundle\Entity\Orders
+            form:
+                fields:
+                    - reference
+                    - content_of_the_order
+                    - status
