@@ -6,7 +6,7 @@ easy_admin:
                 fields:
                     - id
                     - name
-                    - { property: 'image', type: 'image', base_path: '%app.path.brand_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.brand_images%'}
             show:
                 fields:
                     - name

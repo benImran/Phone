@@ -1,8 +1,8 @@
 easy_admin:
-    site_name: '<img src="http://www.hbo.com/assets/images/series/game-of-thrones/downloads/wallpaper-iron-throne-1600.jpg" />'
+    site_name: '<img src="https://staticshop.o2.co.uk/product/images/iphone7-plus-jet-black_sku-header.png?cb=5f8b06d4ad5f6ecd1e1e424d6d5af78a" /> King Phone'
     design:
-        brand_color: '#333'
-        color_scheme: 'dark'
+        brand_color: '#26C4EC'
+        color_scheme: 'light'
         form_theme: 'vertical'
     list:
         actions: ['show']

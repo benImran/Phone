@@ -32,7 +32,7 @@ class Category
     /**
      * @ORM\OneToMany(
      *     targetEntity="PhoneBundle\Entity\Product",
-     *     mappedBy="category")
+     *     mappedBy="category", cascade={"remove"})
      */
     private $products;
 

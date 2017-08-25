@@ -81,7 +81,6 @@
           <root url="file://$MODULE_DIR$/vendor/egeloen/ckeditor-bundle" />
           <root url="file://$MODULE_DIR$/vendor/egeloen/json-builder" />
           <root url="file://$MODULE_DIR$/vendor/fig/link-util" />
-          <root url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
           <root url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
           <root url="file://$MODULE_DIR$/vendor/javiereguiluz/easyadmin-bundle" />
           <root url="file://$MODULE_DIR$/vendor/javiereguiluz/javiereguiluz" />
@@ -131,7 +130,6 @@
           <root url="file://$MODULE_DIR$/vendor/egeloen/ckeditor-bundle" />
           <root url="file://$MODULE_DIR$/vendor/egeloen/json-builder" />
           <root url="file://$MODULE_DIR$/vendor/fig/link-util" />
-          <root url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
           <root url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
           <root url="file://$MODULE_DIR$/vendor/javiereguiluz/easyadmin-bundle" />
           <root url="file://$MODULE_DIR$/vendor/javiereguiluz/javiereguiluz" />

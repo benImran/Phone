@@ -34,11 +34,17 @@ class Type
      *     targetEntity="PhoneBundle\Entity\Product",
      *     mappedBy="type", cascade={"remove"})
      */
-    private $product;
+    private $products;
+
+
+    public function getProducts()
+    {
+        return $this->products;
+    }
 
     public function __construct()
     {
-        $this->product = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     public function __toString()

@@ -50,27 +50,42 @@ class Brand
      */
     private $updatedAt;
 
-
     /**
-     * @return mixed
+     * @ORM\OneToMany(
+     *     targetEntity="PhoneBundle\Entity\Product",
+     *     mappedBy="brand", cascade={"remove"})
      */
+    private $products;
+
+
+
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
+
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
     public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param mixed $updatedAt
-     */
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getImageFile()
     {
         return $this->imageFile;
@@ -90,17 +105,11 @@ class Brand
         }
     }
 
-    /**
-     * @return mixed
-     */
     public function getImage()
     {
         return $this->image;
     }
 
-    /**
-     * @param mixed $image
-     */
     public function setImage($image)
     {
         $this->image = $image;
@@ -108,23 +117,11 @@ class Brand
     }
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Brand
-     */
     public function setName($name)
     {
         $this->name = $name;
@@ -132,11 +129,6 @@ class Brand
         return $this;
     }
 
-    /**
-     * Get name
-     *
-     * @return string
-     */
     public function getName()
     {
         return $this->name;

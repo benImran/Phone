@@ -82,9 +82,10 @@ class Product
     private $stock;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="brand", type="string", length=30)
+     * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Brand",
+     *     inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $brand;
 
@@ -98,7 +99,7 @@ class Product
     /**
      * @ORM\ManyToOne(
      *     targetEntity="PhoneBundle\Entity\Type",
-     *     inversedBy="product")
+     *     inversedBy="products")
      * @ORM\JoinColumn(nullable=true)
      */
     private $type;
