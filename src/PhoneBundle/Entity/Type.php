@@ -85,5 +85,28 @@ class Type
     {
         return $this->name;
     }
-}
 
+    /**
+     * Add product
+     *
+     * @param \PhoneBundle\Entity\Product $product
+     *
+     * @return Type
+     */
+    public function addProduct(\PhoneBundle\Entity\Product $product)
+    {
+        $this->products[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \PhoneBundle\Entity\Product $product
+     */
+    public function removeProduct(\PhoneBundle\Entity\Product $product)
+    {
+        $this->products->removeElement($product);
+    }
+}

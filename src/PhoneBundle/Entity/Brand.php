@@ -59,7 +59,6 @@ class Brand
 
 
 
-
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -132,5 +131,20 @@ class Brand
     public function getName()
     {
         return $this->name;
+    }
+
+
+
+    public function addProduct(\PhoneBundle\Entity\Product $product)
+    {
+        $this->products[] = $product;
+
+        return $this;
+    }
+
+
+    public function removeProduct(\PhoneBundle\Entity\Product $product)
+    {
+        $this->products->removeElement($product);
     }
 }
