@@ -105,8 +105,11 @@ fos_user:
     firewall_name: main
     user_class: PhoneBundle\Entity\User
     from_email:
-        address: "localdevhost@gmail.com"
-        sender_name: "localdevhost@gmail.com"
+        address: "bsaidmedjahed@gmail.com"
+        sender_name: "Ben"
+    registration:
+        confirmation:
+            enabled: true
 
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"
