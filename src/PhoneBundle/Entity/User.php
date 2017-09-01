@@ -19,17 +19,17 @@ class User extends BaseUser
     protected $id;
     /**
      * @var string
-     * @ORM\Column(name="Genre", type="string", length=255)
+     * @ORM\Column(name="genre", type="string", length=255)
      */
     protected $Genre;
     /**
      * @var string
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=30)
      */
     protected $Nom;
     /**
      * @var string
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=30)
      */
     protected $Prenom;
     /**
@@ -39,32 +39,32 @@ class User extends BaseUser
     protected $DateDeNaissance;
     /**
      * @var string
-     * @ORM\Column(name="adresse", type="string", length=255)
+     * @ORM\Column(name="adresse", type="string", length=150)
      */
     protected $Adresse;
     /**
      * @var string
-     * @ORM\Column(name="complement_adresse", type="string", length=255)
+     * @ORM\Column(name="complement_adresse", type="string", length=100)
      */
     protected $ComplementAdresse;
     /**
      * @var string
-     * @ORM\Column(name="confirmation_email", type="string", length=255)
+     * @ORM\Column(name="confirmation_email", type="string", length=100)
      */
     protected $ConfirmationEmail;
     /**
-     * @var string
-     * @ORM\Column(name="code_postale", type="string", length=255)
+     * @var integer
+     * @ORM\Column(name="code_postale", type="integer")
      */
     protected $CodePostale;
     /**
      * @var string
-     * @ORM\Column(name="ville", type="string", length=255)
+     * @ORM\Column(name="ville", type="string", length=40)
      */
     protected $Ville;
     /**
      * @var string
-     * @ORM\Column(name="pays", type="string", length=255)
+     * @ORM\Column(name="pays", type="string", length=50)
      */
     protected $Pays;
     public function __construct()
