@@ -2,9 +2,8 @@
 
 namespace PhoneBundle\Form;
 
-
-
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
 
@@ -12,6 +11,7 @@ class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $builder->add('genre', ChoiceType::class, ['choices' => ['Mr' => 'Monsieur', 'Mlle' => 'Mademoiselle', 'Mme' => 'Madame'], 'multiple' => false , 'expanded' => true]);
         $builder->add('nom');
         $builder->add('prenom');
         $builder->add('date_de_naissance', BirthdayType::class, ['placeholder' => ['year' => 'Année', 'month' => 'Mois', 'date' => 'Date']]);

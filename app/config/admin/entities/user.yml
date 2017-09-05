@@ -19,5 +19,5 @@ easy_admin:
             form_options: { validation_groups: ['Profile'] }
             new:
                 fields:
-                    - { property: 'plainPassword', type_options: { required: true} }
+                    - { property: 'plainPassword', type_options: { required: true } }
                 form_options: { validation_groups: ['Registration'] }

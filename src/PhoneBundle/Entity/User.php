@@ -1,6 +1,5 @@
 <?php
 
-
 namespace PhoneBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
@@ -19,54 +18,55 @@ class User extends BaseUser
     protected $id;
     /**
      * @var string
-     * @ORM\Column(name="genre", type="string", length=255)
+     * @ORM\Column(name="genre", type="string", length=50)
      */
     protected $Genre;
     /**
      * @var string
-     * @ORM\Column(name="nom", type="string", length=30)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
     protected $Nom;
     /**
      * @var string
-     * @ORM\Column(name="prenom", type="string", length=30)
+     * @ORM\Column(name="prenom", type="string", length=255)
      */
     protected $Prenom;
     /**
-     * @var
-     * @ORM\Column(name="date_de_naissance", type="date", length=255)
+     * @var string
+     * @ORM\Column(name="date_de_naissance", type="datetime", length=255)
      */
     protected $DateDeNaissance;
     /**
      * @var string
-     * @ORM\Column(name="adresse", type="string", length=150)
+     * @ORM\Column(name="adresse", type="string", length=255)
      */
     protected $Adresse;
     /**
      * @var string
-     * @ORM\Column(name="complement_adresse", type="string", length=100)
+     * @ORM\Column(name="complement_adresse", type="string", length=255, nullable=true)
      */
     protected $ComplementAdresse;
     /**
      * @var string
-     * @ORM\Column(name="confirmation_email", type="string", length=100)
+     * @ORM\Column(name="confirmation_email", type="string", length=255)
      */
     protected $ConfirmationEmail;
     /**
-     * @var integer
-     * @ORM\Column(name="code_postale", type="integer")
+     * @var string
+     * @ORM\Column(name="code_postale", type="string", length=255)
      */
     protected $CodePostale;
     /**
      * @var string
-     * @ORM\Column(name="ville", type="string", length=40)
+     * @ORM\Column(name="ville", type="string", length=255)
      */
     protected $Ville;
     /**
      * @var string
-     * @ORM\Column(name="pays", type="string", length=50)
+     * @ORM\Column(name="pays", type="string", length=255)
      */
     protected $Pays;
+
     public function __construct()
     {
         parent::__construct();
@@ -127,7 +127,7 @@ class User extends BaseUser
         return $this;
     }
     /**
-     * Get prénom
+     * Get prenom
      *
      * @return string
      */
@@ -136,7 +136,7 @@ class User extends BaseUser
         return $this->Prenom;
     }
     /**
-     * Set dateNaissance
+     * Set dateDeNaissance
      *
      * @param string $dateDeNaissance
      *
