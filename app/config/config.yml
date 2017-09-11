@@ -86,19 +86,10 @@ vich_uploader:
 
 ivory_ck_editor:
     input_sync: true
-    default_config: base_config
     configs:
-        base_config:
-            toolbar:
-                - { name: 'clipboard', items: [ 'Undo', 'Redo' ] }
-                - { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] }
-                - { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] }
-                - { name: 'tools', items: [ 'Maximize' ] }
-                - { name: 'document', items: [ 'Source' ] }
-                - '/'
-                - { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] }
-                - { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] }
-                - { name: 'styles', items: [ 'Format' ] }
+        my_config:
+            toolbar: "full"
+            language: fr_FR
 
 fos_user:
     db_driver: orm
