@@ -67,6 +67,17 @@ class User extends BaseUser
      */
     protected $Pays;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $facebookID;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $googleID;
+
     public function __construct()
     {
         parent::__construct();
@@ -281,5 +292,38 @@ class User extends BaseUser
     public function getPays()
     {
         return $this->Pays;
+    }
+    /**
+     * @return mixed
+     */
+    public function getFacebookID()
+    {
+        return $this->facebookID;
+    }
+
+    /**
+     * @param mixed $facebookID
+     */
+    public function setFacebookID($facebookID)
+    {
+        $this->facebookID = $facebookID;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGoogleID()
+    {
+        return $this->googleID;
+    }
+
+    /**
+     * @param mixed $googleID
+     */
+    public function setGoogleID($googleID)
+    {
+        $this->googleID = $googleID;
+        return $this;
     }
 }

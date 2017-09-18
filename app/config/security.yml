@@ -29,6 +29,16 @@ security:
                 use_referer:                    false
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
+            oauth:
+                resource_owners:
+                    facebook:           "/connect/check-facebook"
+                    google:             "/connect/check-google"
+                login_path:        /connect
+                use_forward:       false
+                failure_path:      /connect
+
+                oauth_user_provider:
+                    service: my.oauth_aware.user_provider.service
 
             logout:
                 target: /
