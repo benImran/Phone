@@ -24,7 +24,7 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
-                default_target_path:            /_secret_adm
+                default_target_path:            /admin
                 target_path_parameter:          _target_path
                 use_referer:                    false
                 # if you are using Symfony < 2.8, use the following config instead:

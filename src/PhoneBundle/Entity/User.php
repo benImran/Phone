@@ -23,12 +23,12 @@ class User extends BaseUser
     protected $Genre;
     /**
      * @var string
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=60)
      */
     protected $Nom;
     /**
      * @var string
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=60)
      */
     protected $Prenom;
     /**
@@ -48,33 +48,33 @@ class User extends BaseUser
     protected $ComplementAdresse;
     /**
      * @var string
-     * @ORM\Column(name="confirmation_email", type="string", length=255)
+     * @ORM\Column(name="confirmation_email", type="string", length=70)
      */
     protected $ConfirmationEmail;
     /**
      * @var string
-     * @ORM\Column(name="code_postale", type="string", length=255)
+     * @ORM\Column(name="code_postale", type="integer")
      */
     protected $CodePostale;
     /**
      * @var string
-     * @ORM\Column(name="ville", type="string", length=255)
+     * @ORM\Column(name="ville", type="string", length=100)
      */
     protected $Ville;
     /**
      * @var string
-     * @ORM\Column(name="pays", type="string", length=255)
+     * @ORM\Column(name="pays", type="string", length=70)
      */
     protected $Pays;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $facebookID;
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $googleID;
 
