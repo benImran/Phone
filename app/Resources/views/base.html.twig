@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
+    <!-- <meta charset=""> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <meta description="Benchaa">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/web/src/images/favicon.jpg" sizes="32x32">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="../web/src/css/global.css">
+    <!--endbuild-->
 </head>
+
 <body>
 
 {% block header %}

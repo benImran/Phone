@@ -9,7 +9,7 @@ const spritesmith = require('gulp.spritesmith');
 const $           = require('gulp-load-plugins')();
 
 
-var THE_THEME = './'; // dossier de travail
+var THE_THEME = './web/src'; // dossier de travail
 var destination = './dist'; // dossier à livrer
 
 function sassTask() {
