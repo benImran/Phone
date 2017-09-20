@@ -7,12 +7,15 @@ easy_admin:
                     - id
                     - name
                     - { property: 'image', type: 'image', base_path: '%app.path.brand_images%'}
+                    - products
             show:
                 fields:
                     - name
                     - { property: 'image', type: 'image', base_path: '%app.path.brand_images%' }
+                    - products
             form:
                 fields:
                     - name
                     - { property: 'imageFile', type: 'vich_image' }
+                    - products
 

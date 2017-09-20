@@ -2,6 +2,7 @@
 
 namespace PhoneBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -120,11 +121,40 @@ class Product
     private $createdAt;
 
     /**
-     * @Gedmo\Timestampable(on="update")
+     * @param mixed $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+        return $this;
+    }
+
+    /**
      * @ORM\Column(type="datetime")
+     * @var \DateTime
      */
     private $updatedAt;
 
+
+    public function __toString()
+    {
+        return (string) $this->getBrand();
+    }
+
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param mixed $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+        return $this;
+    }
 
 
     /**
@@ -328,10 +358,5 @@ class Product
         return $this->createdAt;
     }
 
-
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
 }
 

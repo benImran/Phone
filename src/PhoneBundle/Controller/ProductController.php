@@ -13,7 +13,7 @@ class ProductController extends BaseController
     /**
      * @Route("/listproduct", name="list_product")
      */
-    public function listActions(Request $request)
+    public function listAction(Request $request)
     {
         $product = self::$em->getRepository('PhoneBundle::Product');
         $query = $product->createQueryBuilder('prod')
@@ -40,7 +40,7 @@ class ProductController extends BaseController
     /**
      * @Route("/product{slug}", name="product")
      */
-    public function showActions($slug)
+    public function showAction($slug)
     {
         $data = self::$em->getRepository("PhoneBundle:Product")
                 ->findOneBy(["slug" => $slug]);

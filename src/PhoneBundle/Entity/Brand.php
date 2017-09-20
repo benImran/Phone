@@ -69,6 +69,8 @@ class Brand
         return (string) $this->getName();
     }
 
+
+
     public function getProducts()
     {
         return $this->products;
