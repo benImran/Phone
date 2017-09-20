@@ -1,0 +1,27 @@
+<header>
+    <div class="menu">
+        <h1>LOGO</h1>
+        <div class="container-menu">
+            <div class="menu-picto">
+                <img src="src/images/search.png" alt="search">
+            </div>
+            <div class="menu-picto">
+                <img src="src/images/person.png" alt="person">
+            </div>
+            <div class="menu-picto bag">
+                <p>0</p>
+                <img src="src/images/bag.png" alt="bag">
+            </div>
+            <div class="menu-picto cart">
+                <h2>Mon Panier</h2>
+                <p>222</p>
+            </div>
+        </div>
+    </div>
+    <div class="menu-marque">
+        {% for nav in navs %}
+            <p>{{ nav.brand|raw }}</p>
+        {% endfor %}
+
+    </div>
+</header>

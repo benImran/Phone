@@ -4,14 +4,14 @@ namespace PhoneBundle\Controller;
 
 use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
     /**
-     * @Route("/product", name="product")
+     * @Route("/listproduct", name="list_product")
      */
     public function listActions(Request $request)
     {
@@ -31,9 +31,29 @@ class ProductController extends Controller
         );
 
         return $this->render(
-            'pages/product.html.twig', [
+            'pages/listproduct.html.twig', [
                 "pagination" => $pagination
             ]
         );
+    }
+
+    /**
+     * @Route("/product{slug}", name="product")
+     */
+    public function showActions($slug)
+    {
+        $data = self::$em->getRepository("PhoneBundle:Product")
+                ->findOneBy(["slug" => $slug]);
+
+        if(!$data) {
+            throw new NotFoundHttpException("This article does not exist");
+        }
+
+        return $this->render(
+            'pages/product.html.twig', [
+                "data" => $data
+            ]
+        );
+
     }
 }

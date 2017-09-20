@@ -5,6 +5,7 @@ namespace PhoneBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 
 /**
@@ -54,18 +55,11 @@ class Product
     private $imageFile;
 
     /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTime
-     */
-    private $updatedAt;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="abstract", type="string", length=80)
      */
     private $abstract;
-
 
     /**
      * @var int
@@ -112,6 +106,26 @@ class Product
      * @ORM\JoinColumn(nullable=true)
      */
     private $category;
+
+    /**
+     * @Gedmo\Slug(fields={"title"}, updatable=false)
+     * @ORM\Column(type="string", unique=true, length=128)
+     */
+    private $slug;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+
 
     /**
      * @ORM\Column(type="boolean")
@@ -277,19 +291,6 @@ class Product
     }
 
 
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-
-
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-        return $this;
-    }
-
-
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
@@ -307,6 +308,30 @@ class Product
     public function getImageFile()
     {
         return $this->imageFile;
+    }
+
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }
 
