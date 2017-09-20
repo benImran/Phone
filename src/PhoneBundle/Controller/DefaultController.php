@@ -13,7 +13,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('PhoneBundle:Pages:home.html.twig');
+        return $this->render('pages/home.html.twig');
     }
 
 }
