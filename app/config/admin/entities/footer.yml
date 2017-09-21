@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        Footer:
+            class: PhoneBundle\Entity\Footer
+            list:
+                fields:
+                    - email
+                    - phone
+            show:
+                fields:
+                    - email
+                    - phone
+            form:
+                fields:
+                    - email
+                    - phone

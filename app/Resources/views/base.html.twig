@@ -6,10 +6,8 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     <meta description="Benchaa">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/web/src/images/favicon.jpg" sizes="32x32">
-    <!--build:css css/styles.min.css-->
+    <link rel="icon" type="image/png" href="{{ asset('src/images/favicon.jpg') }}" sizes="32x32">
     <link rel="stylesheet" href="{{ asset('src/css/global.css') }}">
-    <!--endbuild-->
 </head>
 
 <body>
@@ -23,8 +21,9 @@
 {% endblock %}
 
 {% block footer %}
-    {% include ('partials/_footer.html.twig')%}
+    {{ render(controller('PhoneBundle:Footer:footer')) }}
 {% endblock %}
+
 {% block javascripts %}{% endblock %}
 </body>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="ecommerce_phone@localhost" uuid="01544f88-090b-4d65-aa75-4f7848a93829">
+    <data-source name="ecommerce_phone@localhost" uuid="6f014392-6d5a-4930-8cd6-9cd2f321f10d">
       <database-info product="MySQL" version="5.6.35" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -10,18 +10,6 @@
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <introspection-schemas>*:ecommerce_phone</introspection-schemas>
-    </data-source>
-    <data-source name="MySQL - ecommerce_phone@localhost" uuid="04665388-d3cd-418c-97c5-80652dfd2cf0">
-      <database-info product="MySQL" version="5.6.35" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <introspection-schemas>*:ecommerce_phone|ecommerce_phone:</introspection-schemas>
-      <resolve-scope>ecommerce_phone:</resolve-scope>
-      <unqualified-resolve-schemas>ecommerce_phone:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>

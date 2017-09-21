@@ -4,7 +4,6 @@ easy_admin:
             class: PhoneBundle\Entity\Product
             list:
                 fields:
-                    - id
                     - visible
                     - title
                     - reference
@@ -20,7 +19,6 @@ easy_admin:
 
             show:
                 fields:
-                    - id
                     - visible
                     - title
                     - reference
