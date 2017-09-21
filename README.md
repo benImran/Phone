@@ -11,8 +11,9 @@ créer un nouveau projet : symfony new NomduProjet
 
 créer une entité dans la table : sf doctrine:generate:entity PhoneBundle:NomEntity
 
-mise à jour de la base de donnée :   * sf doctrine:migrations:diff
-                                     * sf doctrine:migrations:migrate
+mise à jour de la base de donnée : 
+* sf doctrine:migrations:diff
+* sf doctrine:migrations:migrate
                                    
 création d'un Form : sf doctrine:generate:form PhoneBundle:NomduForm
 
