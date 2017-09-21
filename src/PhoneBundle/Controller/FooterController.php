@@ -10,8 +10,9 @@ class FooterController extends Controller
     public function footerAction(EntityManagerInterface $em)
     {
         $foot = $em->getRepository('PhoneBundle:Footer')
-            ->findBy(['id' => 1]);
-
+            ->find(1);
+        // dump($foot);
+        // die();
         return $this->render('partials/_footer.html.twig', [
             "foot" => $foot
         ]);
