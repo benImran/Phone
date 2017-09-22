@@ -3,9 +3,11 @@
   <component name="dataSourceStorageLocal">
     <data-source name="ecommerce_phone@localhost" uuid="01544f88-090b-4d65-aa75-4f7848a93829">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:ecommerce_phone</introspection-schemas>
     </data-source>
     <data-source name="MySQL - ecommerce_phone@localhost" uuid="04665388-d3cd-418c-97c5-80652dfd2cf0">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:ecommerce_phone</introspection-schemas>
     </data-source>
   </component>
 </project>
