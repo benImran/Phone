@@ -5,7 +5,7 @@ header {
 	background-color:$white;
 	.menu {
 		padding:29px 0 24px;
-		border-bottom:1px solid $black;
+		border-bottom:1px solid $warm-grey;
 		h1 {
 			margin-left:50%;
 			transform: translateX(-50%);
@@ -96,10 +96,23 @@ header {
         .dropdown-content {
           display: none;
           position: absolute;
-          background-color: #f9f9f9;
+          box-shadow: -2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+          border: solid 1px #979797;
+          background-color:$white;
           min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
           z-index: 1;
+          padding: 30px;
+          top: 45px;
+          transform: translateX(-64%);
+          &:before {
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid $warm-grey;
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 56px;
+          }
           h2 {
             font-family: $roboto;
             font-size: 16px;
@@ -107,8 +120,33 @@ header {
             letter-spacing: -0.2px;
             color: $peachy-pink;
           }
-          input[type=text] {
-
+          input {
+            border-bottom:solid 1px $black;
+            width: 190px;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            font-family: $roboto;
+            font-size: 14px;
+            letter-spacing: -0.1px;
+            color: $black;
+            margin-top: 20px;
+          }
+          p {
+            font-family: $roboto;
+            font-size: 14px;
+            margin-top: 10px;
+          }
+          .password-forget {
+            font-family: $roboto;
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: -0.1px;
+            color: $black;
+            margin-top: 10px; 
+            a:hover {
+              border-bottom:1px solid $black;
+            }
           }
         }
       }
@@ -153,7 +191,7 @@ header {
 		display: flex;
 		justify-content:center;
 		padding:17px 0;
-		border-bottom:1px solid $black;
+		border-bottom:1px solid $warm-grey;
 		p{
 			margin-right: 3%;
 			text-transform:uppercase;
