@@ -1,0 +1,121 @@
+.container.listing-produit {
+  max-width:990px;
+  margin:0 auto 100px;
+}
+.listing-produit {
+	h1 {
+    font-family: $roboto;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    text-align: center;
+    margin: 50px 0;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .col-2 {
+    width: 25%;
+    h2 {
+      font-family: $roboto;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+      padding-bottom: 17px;
+      border-bottom: 1px solid $warm-grey;
+    }
+    .option {
+      margin-top: 20px;
+      .choice {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 6px;
+        input[type=checkbox] {
+          margin-right: 17px;
+        }
+        p {
+          font-family: $roboto;
+          font-size: 16px;
+          letter-spacing: -0.2px;
+        }
+      }
+    }
+  }
+  .product {
+    flex-wrap: wrap;
+  }
+  .col-6 {
+    width: 75%;
+    .col-2 {
+      width: calc(33.333% - 25px);
+      margin-left: 25px;
+      margin-bottom: 40px;
+      cursor: pointer;
+      padding: 25px;
+      border: 1px solid $white;
+      &:hover {
+        border-bottom:1px solid $warm-grey;
+      }
+
+      h3 {
+        font-family: $roboto;
+        font-size: 16px;
+        letter-spacing: -0.2px;
+        margin-bottom: 6px;
+        margin-top: 20px;
+        font-weight: 500;
+      }
+      .subtitle {
+        font-family: $roboto;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: -0.1px;
+        margin-bottom: 10px;
+      }
+      .description {
+        font-family: $roboto;
+        font-size: 13px;
+        font-weight: 300;
+        color: $warm-grey;
+        margin-bottom: 15px;
+      }
+      .price {
+        font-family: $roboto;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        color: $peachy-pink;
+        margin-bottom: 15px;
+      }
+      .img {
+        margin: 0 auto;
+        img {
+          overflow: hidden;
+          width: 142px;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+      a {
+        padding: 6px 29px 6px 7px;
+        height: 55px;
+        border-radius: 3px;
+        background-color: $peachy-pink;
+        position: relative;
+        color: $white;
+        &:hover {
+          background-color:$peachy-pink-hover;
+        }
+        i {
+         background: url('../images/bagx2.png') no-repeat 2px center;
+          width: 31px;
+          height: 18px;
+          content: '';
+          position: absolute;
+        }
+      }
+    }
+  }
+}
