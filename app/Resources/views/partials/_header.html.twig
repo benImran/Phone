@@ -7,16 +7,15 @@
                     <input type="search" placeholder="Search">
                 </form>
             </div>
-            <div class="menu-picto">
-                <img src="{{ asset('src/images/person.png') }}" alt="person">
-            </div>
-            <div class="menu-picto bag">
-                <p>0</p>
-                <img src="{{ asset('src/images/bag.png') }}" alt="bag">
-            </div>
-            <div class="menu-picto cart">
-                <h2>Mon Panier</h2>
-                <p>222</p>
+            <div class="menu-picto user dropdown">
+                <img src="{{ asset('images/person.png') }}" alt="person">
+                <div class="dropdown-content">
+                    <h2>Connexion</h2>
+                    <input type="text" placeholder="Adresse e-mail">
+                    <input type="password" placeholder="Mot de passe">
+                    <p><a>Se connecter</a></p>
+                    <p class="password-forget">Mot de passe oublié ? <a href="#">Inscrivez-vous</a></p>
+                </div>
             </div>
         </div>
     </div>

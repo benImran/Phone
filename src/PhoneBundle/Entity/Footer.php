@@ -22,6 +22,12 @@ class Footer
     private $id;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $visible;
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=100)
@@ -67,5 +73,16 @@ class Footer
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+        return $this;
     }
 }
