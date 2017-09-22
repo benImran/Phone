@@ -11,8 +11,7 @@ class FooterController extends Controller
     {
         $foot = $em->getRepository('PhoneBundle:Footer')
             ->find(1);
-        // dump($foot);
-        // die();
+
         return $this->render('partials/_footer.html.twig', [
             "foot" => $foot
         ]);
