@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ProductController extends BaseController
 {
     /**
-     * @Route("/", name="list_product")
+     * @Route("/list_product", name="list_product")
      */
     public function listAction(Request $request)
     {
