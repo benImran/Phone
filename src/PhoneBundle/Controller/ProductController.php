@@ -2,6 +2,7 @@
 
 namespace PhoneBundle\Controller;
 
+
 use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,12 +12,12 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ProductController extends BaseController
 {
     /**
-     * @Route("/listproduct", name="list_product")
+     * @Route("/", name="list_product")
      */
     public function listAction(Request $request)
     {
-        $product = self::$em->getRepository('PhoneBundle::Product');
-        $query = $product->createQueryBuilder('prod')
+        $listproduct = self::$em->getRepository('PhoneBundle:Product');
+        $query = $listproduct->createQueryBuilder('prod')
             ->orderBy('prod.id', 'DESC')->getQuery();
 
         $list = $query->getResult();
@@ -24,15 +25,19 @@ class ProductController extends BaseController
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
+        $product = self::$em->getRepository('PhoneBundle:Product')
+            ->findOneBy(['id' => 'DESC']);
+
         $pagination = $paginator->paginate(
             $list,
             $request->query->getInt('page', 1),
-            6
+            2
         );
 
         return $this->render(
             'pages/listproduct.html.twig', [
-                "pagination" => $pagination
+                "pagination" => $pagination,
+                "product" => $product
             ]
         );
     }

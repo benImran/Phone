@@ -1,2 +1,44 @@
 {% extends "base.html.twig" %}
-{% block body %}{% endblock %}
+{% block body %}
+
+    <div class="container listing-produit">
+        <h1>APPLE</h1>
+        <div class="row">
+            <div class="col-2">
+                <h2>Iphone 7</h2>
+                <div class="option">
+                    <div class="choice">
+                        <input type="checkbox">
+                        <p>Prix le plus haut</p>
+                    </div>
+                    <div class="choice">
+                        <input type="checkbox">
+                        <p>Prix le plus bas</p>
+                    </div>
+                </div>
+            </div>
+            {% for list in pagination %}
+                <div class="col-6">
+                    <div class="row product">
+                        <div class="col-2">
+                            <div class="img">
+                                <img src="{{ asset("/uploads/images/products/#{list.image}") }}" alt="iphone">
+                            </div>
+                            <h3>{{ list.brand }}</h3>
+                            <p class="subtitle">{{ list.title|raw }}</p>
+                            <p class="description">{{ list.abstract|raw }}</p>
+                            <p class="price">{{ list.rate }}€ TTC</p>
+                            <a href="">+<i></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+        </div>
+    </div>
+
+    </body>
+    </html>
+{% endblock %}
