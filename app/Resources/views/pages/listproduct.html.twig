@@ -28,6 +28,7 @@
                             <p class="description">{{ list.abstract|raw }}</p>
                             <p class="price">{{ list.rate }}€ TTC</p>
                             <a href="">+<i></i></a>
+                            <a href="{{ path('panier_add', { 'id': list.id }) }}">addpanier</a>
                         </div>
                     </div>
                 </div>

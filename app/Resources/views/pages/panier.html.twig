@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Produits list</h1>
+    {% if panier %}
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in panier %}
+            {% set id = produit.id %}
+            <tr>
+                <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('produit_show', { 'id': produit.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('panier_delete', { 'id': produit.id }) }}">removepanier</a>
+                        </li>
+                        <li>
+                          <a href="{{ path('qty_down', { 'id': produit.id }) }}">-</a>
+                          {{ qty[id] }}
+                          <a href="{{ path('qty_up', { 'id': produit.id }) }}">+</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <!-- @TODO SAMY Gérer la redirection login + commandes POST après le paiement-->
+    <button type="button" name="button">Finaliser ma commande</button>
+    {% else %}
+      <h2>Votre Panier est vide</h2>
+    {% endif %}
+{% endblock %}
