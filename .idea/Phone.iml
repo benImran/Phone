@@ -79,6 +79,7 @@
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/behat/transliterator" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/defuse/php-encryption" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/cache" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/collections" />
@@ -102,6 +103,8 @@
           <root url="file://$MODULE_DIR$/vendor/javiereguiluz/easyadmin-bundle" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/jms/metadata" />
+          <root url="file://$MODULE_DIR$/vendor/jms/payment-core-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/jms/payment-paypal-bundle" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/kriswallsmith/buzz" />
@@ -140,6 +143,7 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/behat/transliterator" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/defuse/php-encryption" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/cache" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/collections" />
@@ -163,6 +167,8 @@
           <root url="file://$MODULE_DIR$/vendor/javiereguiluz/easyadmin-bundle" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/jms/metadata" />
+          <root url="file://$MODULE_DIR$/vendor/jms/payment-core-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/jms/payment-paypal-bundle" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/kriswallsmith/buzz" />

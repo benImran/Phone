@@ -140,3 +140,12 @@ knp_paginator:
     template:
         pagination: 'KnpPaginatorBundle:Pagination:sliding.html.twig'     # sliding pagination controls template
         sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template
+
+jms_payment_core:
+    encryption:
+        secret: def0000061abb58ac4886a78f7385fb7eed63b4bef6d1b8c82ec3178135ffa7130f551408621b835142c3163d0adb02c6c96226e9ccd7711b77ae18c934d64dac73d765c
+
+jms_payment_paypal:
+    username: your api username
+    password: your api password
+    signature: your api signature

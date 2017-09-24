@@ -3,6 +3,8 @@
 namespace PhoneBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Payment\CoreBundle\Entity\PaymentInstruction;
+
 
 /**
  * Orders
@@ -22,66 +24,51 @@ class Orders
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="reference", type="integer")
+     * @var string
+     * @ORM\OneToOne(targetEntity="JMS\Payment\CoreBundle\Entity\PaymentInstruction")
      */
-    private $reference;
+    private $paymentInstruction;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content_of_the_order", type="string", length=255)
+     * @ORM\Column(name="amount", type="decimal", precision=10, scale=5)
      */
-    private $contentOfTheOrder;
+    private $amount;
+
 
     /**
-     * @var string
+     * Get id
      *
-     * @ORM\Column(name="status", type="string", length=255)
+     * @return int
      */
-    private $status;
-
-
     public function getId()
     {
         return $this->id;
     }
 
-    public function setReference($reference)
+    public function setPaymentInstruction(PaymentInstruction $paymentInstruction)
     {
-        $this->reference = $reference;
+        $this->paymentInstruction = $paymentInstruction;
 
         return $this;
     }
 
-    public function getReference()
+    public function getPaymentInstruction()
     {
-        return $this->reference;
+        return $this->paymentInstruction;
     }
 
-    public function setContentOfTheOrder($contentOfTheOrder)
+    public function setAmount($amount)
     {
-        $this->contentOfTheOrder = $contentOfTheOrder;
+        $this->amount = $amount;
 
         return $this;
     }
 
-    public function getContentOfTheOrder()
+    public function getAmount()
     {
-        return $this->contentOfTheOrder;
-    }
-
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
+        return $this->amount;
     }
 }
 
