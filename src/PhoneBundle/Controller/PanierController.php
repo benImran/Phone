@@ -25,7 +25,7 @@ class PanierController extends Controller
       session_start();
     }
     if(!isset($_SESSION['panier'])){
-      $_SESSION['panier'] = array();
+      $_SESSION['panier'] = [];
     }
     $idpanier = array_keys($_SESSION['panier']);
     $em = $this->getDoctrine()->getManager();
@@ -37,10 +37,10 @@ class PanierController extends Controller
     $panier = $query->getResult();
     $qty = $_SESSION['panier'];
 
-    return $this->render('pages/panier.html.twig', array(
+    return $this->render('pages/panier.html.twig', [
         'panier' => $panier,
         'qty' => $qty,
-    ));
+    ]);
   }
 
   /**
@@ -55,7 +55,7 @@ class PanierController extends Controller
       session_start();
     }
     if(!isset($_SESSION['panier'])){
-      $_SESSION['panier'] = array();
+      $_SESSION['panier'] = [];
     }
     $em = $this->getDoctrine()->getManager();
     $produits = $em->getRepository('PhoneBundle:Product');
@@ -65,7 +65,7 @@ class PanierController extends Controller
                         ->setParameter('id', $_GET['id'])
                         ->getQuery();
       $panier = $query->getResult();
-      if (empty($panier)) {
+      if ($panier === '') {
         // Panier Vide
         die('lolol');
       }
