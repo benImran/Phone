@@ -74,8 +74,7 @@ class PanierController extends Controller
       } else {
         $_SESSION['panier'][$panier[0]->id] = 1;
       }
-      // dump($_SESSION);
-      // die();
+
     } else {
       // Produit introuvable
       die('DIEEEEE');
