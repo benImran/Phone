@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ProductController extends BaseController
 {
     /**
-     * @Route("/list_product", name="list_product")
+     * @Route("/list", name="list_product")
      */
     public function listAction(Request $request)
     {
@@ -26,7 +26,7 @@ class ProductController extends BaseController
         $paginator = $this->get('knp_paginator');
 
         $product = self::$em->getRepository('PhoneBundle:Product')
-            ->findOneBy(['id' => 'DESC']);
+           ->findOneBy(['id' => 'DESC']);
 
         $pagination = $paginator->paginate(
             $list,
@@ -34,8 +34,7 @@ class ProductController extends BaseController
             2
         );
 
-        return $this->render(
-            'pages/listproduct.html.twig', [
+        return $this->render('pages/list_product.html.twig', [
                 "pagination" => $pagination,
                 "product" => $product
             ]
@@ -43,12 +42,12 @@ class ProductController extends BaseController
     }
 
     /**
-     * @Route("/product{slug}", name="product")
+     * @Route("/product/{slug}", name="product_sl")
      */
     public function showAction($slug)
     {
-        $data = self::$em->getRepository("PhoneBundle:Product")
-                ->findOneBy(["slug" => $slug]);
+        $data = self::$em->getRepository('PhoneBundle:Product')
+            ->findOneBy(["slug" => $slug]);
 
         if(!$data) {
             throw new NotFoundHttpException("This article does not exist");
@@ -56,9 +55,7 @@ class ProductController extends BaseController
 
         return $this->render(
             'pages/product.html.twig', [
-                "data" => $data
-            ]
-        );
-
+            "data" => $data
+        ]);
     }
 }

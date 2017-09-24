@@ -29,15 +29,14 @@ class PanierController extends Controller
     }
     $idpanier = array_keys($_SESSION['panier']);
     $em = $this->getDoctrine()->getManager();
-    $produits = $em->getRepository('AppBundle:Produit');
+    $produits = $em->getRepository('PhoneBundle:Product');
     $query = $produits->createQueryBuilder('p')
                       ->where('p.id IN (:panier)')
                       ->setParameter('panier', $idpanier)
                       ->getQuery();
     $panier = $query->getResult();
     $qty = $_SESSION['panier'];
-    // dump($qty);
-    // die;
+
     return $this->render('pages/panier.html.twig', array(
         'panier' => $panier,
         'qty' => $qty,
@@ -59,7 +58,7 @@ class PanierController extends Controller
       $_SESSION['panier'] = array();
     }
     $em = $this->getDoctrine()->getManager();
-    $produits = $em->getRepository('AppBundle:Produit');
+    $produits = $em->getRepository('PhoneBundle:Product');
     if(isset($_GET['id'])){
       $query = $produits->createQueryBuilder('p')
                         ->where('p.id = :id')

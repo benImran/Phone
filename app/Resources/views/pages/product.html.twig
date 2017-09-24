@@ -1,2 +1,17 @@
 {% extends "base.html.twig" %}
-{% block body %}{% endblock %}
+{% block body %}
+    <div class="col-6">
+        <div class="row product">
+            <div class="col-2">
+                <div class="img">
+                    <img src="{{ asset("/uploads/images/products/#{data.image}") }}" alt="iphone">
+                </div>
+                <h3>{{ data.brand }}</h3>
+                <p class="subtitle">{{ data.title|raw }}</p>
+                <p class="description">{{ data.detail|raw }}</p>
+                <p class="price">{{ data.rate }}€ TTC</p>
+                <a href="">+<i></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
