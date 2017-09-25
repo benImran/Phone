@@ -29,7 +29,7 @@ class PanierController extends Controller
     }
     $idpanier = array_keys($_SESSION['panier']);
     $em = $this->getDoctrine()->getManager();
-    $produits = $em->getRepository('PhoneBundle:Product');
+    $produits = $em->getRepository('PhoneBundle:Product ');
     $query = $produits->createQueryBuilder('p')
                       ->where('p.id IN (:panier)')
                       ->setParameter('panier', $idpanier)

@@ -84,12 +84,6 @@ class Product
      */
     private $brand;
 
-
-    /**
-     * @ORM\Column(name="modele", type="string", length=70)
-     */
-    private $modele;
-
     /**
      * @var string
      *
@@ -126,22 +120,22 @@ class Product
      */
     private $createdAt;
 
-
-    /**
-     * @param mixed $createdAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-        return $this;
-    }
-
     /**
      * @ORM\Column(type="datetime")
      * @var \DateTime
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $visible;
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+        return $this;
+    }
 
     public function __toString()
     {
@@ -154,9 +148,7 @@ class Product
         return $this->updatedAt;
     }
 
-    /**
-     * @param mixed $updatedAt
-     */
+
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
@@ -164,17 +156,10 @@ class Product
     }
 
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $visible;
-
-
     public function getId()
     {
         return $this->id;
     }
-
 
     public function setTitle($title)
     {
@@ -183,12 +168,10 @@ class Product
         return $this;
     }
 
-
     public function getTitle()
     {
         return $this->title;
     }
-
 
     public function setReference($reference)
     {
@@ -197,12 +180,10 @@ class Product
         return $this;
     }
 
-
     public function getReference()
     {
         return $this->reference;
     }
-
 
     public function setAbstract($abstract)
     {
@@ -211,12 +192,10 @@ class Product
         return $this;
     }
 
-
     public function getAbstract()
     {
         return $this->abstract;
     }
-
 
     public function setRate($rate)
     {
@@ -225,12 +204,10 @@ class Product
         return $this;
     }
 
-
     public function getRate()
     {
         return $this->rate;
     }
-
 
     public function setStock($stock)
     {
@@ -245,7 +222,6 @@ class Product
         return $this->stock;
     }
 
-
     public function setBrand($brand)
     {
         $this->brand = $brand;
@@ -253,12 +229,10 @@ class Product
         return $this;
     }
 
-
     public function getBrand()
     {
         return $this->brand;
     }
-
 
     public function setDetail($detail)
     {
@@ -267,12 +241,10 @@ class Product
         return $this;
     }
 
-
     public function getDetail()
     {
         return $this->detail;
     }
-
 
     public function setType($type)
     {
@@ -281,12 +253,10 @@ class Product
         return $this;
     }
 
-
     public function getType()
     {
         return $this->type;
     }
-
 
     public function setCategory(Category $category)
     {
@@ -295,12 +265,10 @@ class Product
         return $this;
     }
 
-
     public function getCategory()
     {
         return $this->category;
     }
-
 
     public function setVisible($visible)
     {
@@ -309,12 +277,10 @@ class Product
         return $this;
     }
 
-
     public function getVisible()
     {
         return $this->visible;
     }
-
 
     public function getImage()
     {
@@ -326,7 +292,6 @@ class Product
         $this->image = $image;
         return $this;
     }
-
 
     public function setImageFile(File $image = null)
     {
@@ -341,18 +306,15 @@ class Product
         }
     }
 
-
     public function getImageFile()
     {
         return $this->imageFile;
     }
 
-
     public function getSlug()
     {
         return $this->slug;
     }
-
 
     public function setSlug($slug)
     {

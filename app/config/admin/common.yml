@@ -4,5 +4,9 @@ easy_admin:
         brand_color: '#333'
         color_scheme: 'light'
         form_theme: 'vertical'
+
     list:
-        actions: ['show']
+        actions:
+            - { name: 'show', icon: 'search', label: '' }
+            - { name: 'edit', icon: 'pencil', label: '' }
+            - { name: 'delete', icon: 'remove', label: ''}
