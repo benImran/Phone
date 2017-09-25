@@ -16,6 +16,7 @@ easy_admin:
                     - type
                     - category
                     - updatedAt
+                    - youtubeId
 
             show:
                 fields:
@@ -31,6 +32,7 @@ easy_admin:
                     - type
                     - category
                     - updatedAt
+                    - youtubeId
             form:
                 fields:
                     - visible
@@ -47,4 +49,5 @@ easy_admin:
                     - type
                     - category
                     - updatedAt
+                    - youtubeId
 

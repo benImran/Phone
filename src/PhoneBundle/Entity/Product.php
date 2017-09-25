@@ -131,6 +131,28 @@ class Product
      */
     private $visible;
 
+    /**
+     * @ORM\Column(name="youtube_id", type="string", length=255)
+     */
+    private $youtubeId;
+
+    /**
+     * @return mixed
+     */
+    public function getYoutubeId()
+    {
+        return $this->youtubeId;
+    }
+
+    /**
+     * @param mixed $youtubeId
+     */
+    public function setYoutubeId($youtubeId)
+    {
+        $this->youtubeId = $youtubeId;
+        return $this;
+    }
+
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
