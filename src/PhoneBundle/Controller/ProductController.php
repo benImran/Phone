@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
-class ProductController extends BaseController
+class ProductController extends EmController
 {
     /**
      * @Route("/list", name="list_product")

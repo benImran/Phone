@@ -5,7 +5,7 @@ namespace PhoneBundle\Controller;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class BaseController extends Controller
+class EmController extends Controller
 {
     protected static $em;
 
