@@ -84,6 +84,12 @@ class Product
      */
     private $brand;
 
+
+    /**
+     * @ORM\Column(name="modele", type="string", length=70)
+     */
+    private $modele;
+
     /**
      * @var string
      *

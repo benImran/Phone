@@ -3,12 +3,12 @@
     <div class="container product">
         <h1>{{ data.brand }}</h1>
         <div class="row-product">
-            <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
+            <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}")}})" class="bg">
             </div>
             <div class="description">
                 <h2>{{ data.title|raw }}</h2>
                 <p>{{ data.detail|raw }}</p>
-                <span>{{ data.reference }}</span>
+                <span>Ref. {{ data.reference }}</span>
                 <p class="price">{{ data.rate }}€</p>
                 <div>
                     <button value="+">+</button>
@@ -24,7 +24,7 @@
 
         <div class="video">
             <h2>Réparez votre écran LCD iPhone 7 en suivant cette vidéo </h2>
-            <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+            <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
             </div>
         </div>
 
@@ -32,28 +32,28 @@
             <h2>Ce qui pourrait vous intéressez</h2>
             <div class="row">
                 <div class="product-interesse">
-                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
                     </div>
                     <h3>Button home</h3>
                     <p>29</p>
                     <button>Découvrir</button>
                 </div>
                 <div class="product-interesse">
-                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
                     </div>
                     <h3>Button home</h3>
                     <p>29</p>
                     <button>Découvrir</button>
                 </div>
                 <div class="product-interesse">
-                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
                     </div>
                     <h3>Button home</h3>
                     <p>29</p>
                     <button>Découvrir</button>
                 </div>
                 <div class="product-interesse">
-                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
                     </div>
                     <h3>Button home</h3>
                     <p>29</p>
