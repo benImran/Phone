@@ -32,12 +32,17 @@ class Brand
      */
     private $name;
 
+    /**
+     * @ORM\Column(name="model", type="string", length=70)
+     */
+    private $model;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      * @var \DateTime
      */
     private $updatedAt;
+
 
     /**
      * @ORM\OneToMany(
@@ -46,24 +51,24 @@ class Brand
      */
     private $products;
 
-
-
     public function __construct()
     {
         $this->products = new ArrayCollection();
     }
+
+
 
     public function __toString()
     {
         return (string) $this->getName();
     }
 
-
-
     public function getProducts()
     {
         return $this->products;
     }
+
+
 
     public function getUpdatedAt()
     {
@@ -76,12 +81,12 @@ class Brand
         return $this;
     }
 
-
-
     public function getId()
     {
         return $this->id;
     }
+
+
 
     public function setName($name)
     {
@@ -95,8 +100,6 @@ class Brand
         return $this->name;
     }
 
-
-
     public function addProduct(\PhoneBundle\Entity\Product $product)
     {
         $this->products[] = $product;
@@ -105,8 +108,21 @@ class Brand
     }
 
 
+
     public function removeProduct(\PhoneBundle\Entity\Product $product)
     {
         $this->products->removeElement($product);
+    }
+
+
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    public function setModel($model)
+    {
+        $this->model = $model;
+        return $this;
     }
 }

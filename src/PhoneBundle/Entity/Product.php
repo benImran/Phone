@@ -120,6 +120,7 @@ class Product
      */
     private $createdAt;
 
+
     /**
      * @param mixed $createdAt
      */

@@ -35,7 +35,7 @@ class OrdersController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $orders = new Orders($amount);
+        $orders = new Orders();
         $em->persist($orders);
         $em->flush();
 
@@ -45,15 +45,14 @@ class OrdersController extends Controller
     }
 
     /**
-     * @Route("/{id}/show)
+     * @Route("/{id}/show")
      * @Template
      */
     public function showAction(Request $request, Orders $orders)
     {
         $form = $this->createForm(ChoosePaymentMethodType::class, null, [
-            'amount' => $orders->getAmount(),
-            'currency' => 'EUR'
-
+            'amount'   => $orders->getAmount(),
+            'currency' => 'EUR',
         ]);
 
         $form->handleRequest($request);
@@ -74,12 +73,15 @@ class OrdersController extends Controller
         }
 
         return [
-            'orders' => $orders,
-            'form' => $form->createView(),
+            'order' => $orders,
+            'form'  => $form->createView(),
         ];
     }
 
-    private function createPayment($orders) {
+
+
+    private function createPayment($orders)
+    {
 
         $instruction = $orders->getPaymentInstruction();
         $pendingTransaction = $instruction->getPendingTransaction();
@@ -96,8 +98,7 @@ class OrdersController extends Controller
     }
 
     /**
-     * @param Orders $orders
-     * @Route("/{id}/payment/create)
+     * @Route("/{id}/payment/create")
      */
     public function paymentCreateAction(Orders $orders)
     {
@@ -108,7 +109,7 @@ class OrdersController extends Controller
 
         if ($result->getStatus() === Result::STATUS_SUCCESS) {
             return $this->redirect($this->generateUrl('app_orders_paymentcomplete', [
-                'id' => $orders->getId()
+                'id' => $orders->getId(),
             ]));
         }
 
@@ -125,6 +126,10 @@ class OrdersController extends Controller
         }
 
         throw $result->getPluginException();
+
+        // In a real-world application you wouldn't throw the exception. You would,
+        // for example, redirect to the showAction with a flash message informing
+        // the user that the payment was not successful.
     }
 
     /**

@@ -1,17 +1,69 @@
 {% extends "base.html.twig" %}
 {% block body %}
-    <div class="col-6">
-        <div class="row product">
-            <div class="col-2">
-                <div class="img">
-                    <img src="{{ asset("/uploads/images/products/#{data.image}") }}" alt="iphone">
+    <div class="container product">
+        <h1>{{ data.brand }}</h1>
+        <div class="row-product">
+            <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
+            </div>
+            <div class="description">
+                <h2>{{ data.title|raw }}</h2>
+                <p>{{ data.detail|raw }}</p>
+                <span>{{ data.reference }}</span>
+                <p class="price">{{ data.rate }}€</p>
+                <div>
+                    <button value="+">+</button>
+                    <p>1</p>
+                    <button value="-">-</button>
                 </div>
-                <h3>{{ data.brand }}</h3>
-                <p class="subtitle">{{ data.title|raw }}</p>
-                <p class="description">{{ data.detail|raw }}</p>
-                <p class="price">{{ data.rate }}€ TTC</p>
-                <a href="">+<i></i></a>
+                <p class="stock"> En stock</p>
+                <a href="">Livraison et retour gratuit</a>
+                <a href="" class="condition">Condition générales de ventes</a>
+                <a href="" class="panier"><i></i>Ajouter au panier</a>
+            </div>
+        </div>
+
+        <div class="video">
+            <h2>Réparez votre écran LCD iPhone 7 en suivant cette vidéo </h2>
+            <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+            </div>
+        </div>
+
+        <div class="interesser">
+            <h2>Ce qui pourrait vous intéressez</h2>
+            <div class="row">
+                <div class="product-interesse">
+                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    </div>
+                    <h3>Button home</h3>
+                    <p>29</p>
+                    <button>Découvrir</button>
+                </div>
+                <div class="product-interesse">
+                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    </div>
+                    <h3>Button home</h3>
+                    <p>29</p>
+                    <button>Découvrir</button>
+                </div>
+                <div class="product-interesse">
+                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    </div>
+                    <h3>Button home</h3>
+                    <p>29</p>
+                    <button>Découvrir</button>
+                </div>
+                <div class="product-interesse">
+                    <div style="background-image:url(../web/images/iphone-bg.jpg)" class="bg">
+                    </div>
+                    <h3>Button home</h3>
+                    <p>29</p>
+                    <button>Découvrir</button>
+                </div>
             </div>
         </div>
     </div>
+
+
+    </body>
+    </html>
 {% endblock %}

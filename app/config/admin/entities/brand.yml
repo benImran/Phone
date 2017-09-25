@@ -6,13 +6,16 @@ easy_admin:
                 fields:
                     - id
                     - name
+                    - model
                     - products
             show:
                 fields:
                     - name
+                    - model
                     - products
             form:
                 fields:
                     - name
+                    - model
                     - products
 

@@ -34,6 +34,8 @@ class ProductController extends BaseController
             2
         );
 
+        //dump($pagination->getItems()->getSlug());
+        //die;
         return $this->render('pages/list_product.html.twig', [
                 "pagination" => $pagination,
                 "product" => $product
