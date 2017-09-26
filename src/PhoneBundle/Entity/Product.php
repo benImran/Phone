@@ -76,13 +76,7 @@ class Product
      */
     private $stock;
 
-    /**
-     * @ORM\ManyToOne(
-     *     targetEntity="PhoneBundle\Entity\Brand",
-     *     inversedBy="products")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $brand;
+
 
     /**
      * @var string
@@ -102,11 +96,21 @@ class Product
 
     /**
      * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Model",
+     *     inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $models;
+
+
+    /**
+     * @ORM\ManyToOne(
      *     targetEntity="PhoneBundle\Entity\Category",
      *     inversedBy="products")
      * @ORM\JoinColumn(nullable=true)
      */
     private $category;
+
 
     /**
      * @Gedmo\Slug(fields={"title"}, updatable=false)
@@ -136,17 +140,18 @@ class Product
      */
     private $youtubeId;
 
-    /**
-     * @return mixed
-     */
+    public function __toString()
+    {
+        return (string) $this->getModels();
+    }
+
+
     public function getYoutubeId()
     {
         return $this->youtubeId;
     }
 
-    /**
-     * @param mixed $youtubeId
-     */
+
     public function setYoutubeId($youtubeId)
     {
         $this->youtubeId = $youtubeId;
@@ -158,12 +163,6 @@ class Product
         $this->createdAt = $createdAt;
         return $this;
     }
-
-    public function __toString()
-    {
-        return (string) $this->getBrand();
-    }
-
 
     public function getUpdatedAt()
     {
@@ -182,6 +181,7 @@ class Product
     {
         return $this->id;
     }
+
 
     public function setTitle($title)
     {
@@ -214,6 +214,7 @@ class Product
         return $this;
     }
 
+
     public function getAbstract()
     {
         return $this->abstract;
@@ -238,23 +239,11 @@ class Product
         return $this;
     }
 
-
     public function getStock()
     {
         return $this->stock;
     }
 
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-
-        return $this;
-    }
-
-    public function getBrand()
-    {
-        return $this->brand;
-    }
 
     public function setDetail($detail)
     {
@@ -262,6 +251,7 @@ class Product
 
         return $this;
     }
+
 
     public function getDetail()
     {
@@ -347,6 +337,17 @@ class Product
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    public function getModels()
+    {
+        return $this->models;
+    }
+
+    public function setModels($models)
+    {
+        $this->models = $models;
+        return $this;
     }
 
 }

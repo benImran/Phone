@@ -4,7 +4,6 @@ namespace PhoneBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -32,10 +31,6 @@ class Brand
      */
     private $name;
 
-    /**
-     * @ORM\Column(name="model", type="string", length=70)
-     */
-    private $model;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -46,28 +41,23 @@ class Brand
 
     /**
      * @ORM\OneToMany(
-     *     targetEntity="PhoneBundle\Entity\Product",
+     *     targetEntity="PhoneBundle\Entity\Model",
      *     mappedBy="brand", cascade={"remove"})
      */
-    private $products;
+    private $models;
+
+
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        $this->models = new ArrayCollection();
     }
-
 
 
     public function __toString()
     {
         return (string) $this->getName();
     }
-
-    public function getProducts()
-    {
-        return $this->products;
-    }
-
 
 
     public function getUpdatedAt()
@@ -100,29 +90,29 @@ class Brand
         return $this->name;
     }
 
-    public function addProduct(\PhoneBundle\Entity\Product $product)
+    public function addModel(\PhoneBundle\Entity\Model $model)
     {
-        $this->products[] = $product;
+        $this->models[] = $model;
 
         return $this;
     }
 
 
-
-    public function removeProduct(\PhoneBundle\Entity\Product $product)
+    public function removeModel(\PhoneBundle\Entity\Model $model)
     {
-        $this->products->removeElement($product);
+        $this->models->removeElement($model);
+    }
+
+    public function getModels()
+    {
+        return $this->models;
     }
 
 
-    public function getModel()
+    public function setModels($models)
     {
-        return $this->model;
-    }
-
-    public function setModel($model)
-    {
-        $this->model = $model;
+        $this->models = $models;
         return $this;
     }
+
 }

@@ -4,6 +4,7 @@ easy_admin:
             class: PhoneBundle\Entity\Product
             list:
                 fields:
+                    - id
                     - visible
                     - title
                     - reference
@@ -11,13 +12,12 @@ easy_admin:
                     - rate
                     - stock
                     - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-                    - brand
+                    - models
                     - detail
                     - type
                     - category
                     - updatedAt
                     - youtubeId
-
             show:
                 fields:
                     - visible
@@ -27,7 +27,7 @@ easy_admin:
                     - rate
                     - stock
                     - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-                    - brand
+                    - models
                     - detail
                     - type
                     - category
@@ -42,7 +42,7 @@ easy_admin:
                     - rate
                     - stock
                     - { property: 'imageFile', type: 'vich_image' }
-                    - brand
+                    - models
                     - { type: 'divider' }
                     - { property: 'detail', type: 'ckeditor' }
                     - { type: 'divider' }

@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        Model:
+            class: PhoneBundle\Entity\Model
+            form:
+                fields:
+                    - name
+                    - brand
+                    - products
