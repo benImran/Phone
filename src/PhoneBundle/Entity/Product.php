@@ -29,6 +29,27 @@ class Product
 
 
     /**
+     * @ORM\Column(type="string", length=240)
+     */
+    private $brand;
+
+    /**
+     * @return mixed
+     */
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+    /**
+     * @param mixed $brand
+     */
+    public function setBrand($brand)
+    {
+        $this->brand = $brand;
+        return $this;
+    }
+    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=80)

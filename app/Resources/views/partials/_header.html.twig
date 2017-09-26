@@ -39,7 +39,7 @@
                                 <h3 class="dropdown-nav-title">{{ cat.name|raw }}</h3>
                                 <ul>
                                     {% for mod in model %}
-                                        <li><a href="">{{ mod.name }}</a></li>
+                                        <li><a href="{{ path('list_product') }}">{{ mod.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
