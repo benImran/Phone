@@ -17,9 +17,7 @@ class HeaderController extends Controller
 
         $model = $em->getRepository('PhoneBundle:Model')
             ->findAll();
-
-//        dump();
-//        die;
+            
         return $this->render('partials/_header.html.twig', [
             "navs" => $navs,
             "categ" => $categ,
