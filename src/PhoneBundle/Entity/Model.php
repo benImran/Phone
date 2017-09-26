@@ -45,25 +45,12 @@ class Model
     private $category;
 
 
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-
-    public function setCategory($category)
-    {
-        $this->category = $category;
-        return $this;
-    }
-
     /**
      * @ORM\OneToMany(
      *     targetEntity="PhoneBundle\Entity\Product",
      *     mappedBy="models", cascade={"remove"})
      */
     private $products;
-
 
     public function __toString()
     {
@@ -76,18 +63,17 @@ class Model
         return $this->brand;
     }
 
+
     public function setBrand($brand)
     {
         $this->brand = $brand;
         return $this;
     }
 
-
     public function getId()
     {
         return $this->id;
     }
-
 
 
     public function setName($name)
@@ -96,6 +82,7 @@ class Model
 
         return $this;
     }
+
 
 
     public function getName()
@@ -109,9 +96,22 @@ class Model
         return $this->products;
     }
 
+
     public function setProducts($products)
     {
         $this->products = $products;
+        return $this;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
         return $this;
     }
 }
