@@ -15,7 +15,6 @@ easy_admin:
                     - models
                     - detail
                     - type
-                    - category
                     - updatedAt
                     - youtubeId
             show:
@@ -30,7 +29,6 @@ easy_admin:
                     - models
                     - detail
                     - type
-                    - category
                     - updatedAt
                     - youtubeId
             form:
@@ -47,7 +45,6 @@ easy_admin:
                     - { property: 'detail', type: 'ckeditor' }
                     - { type: 'divider' }
                     - type
-                    - category
                     - updatedAt
                     - youtubeId
 

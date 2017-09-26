@@ -36,6 +36,26 @@ class Model
      */
     private $brand;
 
+    /**
+     * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Category",
+     *     inversedBy="model")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $category;
+
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
 
     /**
      * @ORM\OneToMany(

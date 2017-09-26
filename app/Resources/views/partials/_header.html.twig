@@ -29,11 +29,24 @@
             </div>
         </div>
     </div>
-    <div class="menu-marque">
-        {% for nav in navs %}
-            <a href="{{ path("list_product")}}">
-                <p>{{ nav.name|raw }}</p>
-            </a>
+    <nav class="menu-marque">
+        <ul class="dropdown-nav-category">
+    {% for nav in navs %}
+            <li><a href="">{{ nav.name|raw }}</a>
+                <div class="dropdown-nav">
+                    {% for cat in categ %}
+                    <div class="dropdown-nav-subcategory">
+                        <h3 class="dropdown-nav-title">{{ cat.name|raw }}</h3>
+                        <ul>
+                            {% for mod in model %}
+                                <li><a href="">{{ mod.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {%  endfor %}
+                </div>
+            </li>
         {% endfor %}
-    </div>
+        </ul>
+    </nav>
 </header>

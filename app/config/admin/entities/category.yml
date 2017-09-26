@@ -5,3 +5,4 @@ easy_admin:
             form:
                 fields:
                     - name
+                    - model

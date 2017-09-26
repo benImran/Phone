@@ -31,27 +31,32 @@ class Category
 
     /**
      * @ORM\OneToMany(
-     *     targetEntity="PhoneBundle\Entity\Product",
+     *     targetEntity="PhoneBundle\Entity\Model",
      *     mappedBy="category", cascade={"remove"})
      */
-    private $products;
+    private $model;
+
+
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    public function setModel($model)
+    {
+        $this->model = $model;
+        return $this;
+    }
+
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        $this->model = new ArrayCollection();
     }
 
     public function __toString()
     {
         return (string) $this->getName();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getProducts()
-    {
-        return $this->products;
     }
 
 

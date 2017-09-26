@@ -104,15 +104,6 @@ class Product
 
 
     /**
-     * @ORM\ManyToOne(
-     *     targetEntity="PhoneBundle\Entity\Category",
-     *     inversedBy="products")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $category;
-
-
-    /**
      * @Gedmo\Slug(fields={"title"}, updatable=false)
      * @ORM\Column(type="string", unique=true, length=128)
      */
@@ -270,17 +261,6 @@ class Product
         return $this->type;
     }
 
-    public function setCategory(Category $category)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    public function getCategory()
-    {
-        return $this->category;
-    }
 
     public function setVisible($visible)
     {
