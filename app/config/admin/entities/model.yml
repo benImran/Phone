@@ -5,6 +5,5 @@ easy_admin:
             form:
                 fields:
                     - name
-                    - brand
                     - products
                     - category

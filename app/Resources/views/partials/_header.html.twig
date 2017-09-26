@@ -20,7 +20,7 @@
             <div class="menu-picto bag">
                 <p>0</p>
                 <a href="{{ path("panier_index") }}">
-                <img src="{{ asset('images/bag.png') }}" alt="bag">
+                    <img src="{{ asset('images/bag.png') }}" alt="bag">
                 </a>
             </div>
             <div class="menu-picto cart">
@@ -31,22 +31,22 @@
     </div>
     <nav class="menu-marque">
         <ul class="dropdown-nav-category">
-    {% for nav in navs %}
-            <li><a href="">{{ nav.name|raw }}</a>
-                <div class="dropdown-nav">
-                    {% for cat in categ %}
-                    <div class="dropdown-nav-subcategory">
-                        <h3 class="dropdown-nav-title">{{ cat.name|raw }}</h3>
-                        <ul>
-                            {% for mod in model %}
-                                <li><a href="">{{ mod.name }}</a></li>
-                            {% endfor %}
-                        </ul>
+            {% for nav in navs %}
+                <li><a href="">{{ nav.name|raw }}</a>
+                    <div class="dropdown-nav">
+                        {% for cat in categ %}
+                            <div class="dropdown-nav-subcategory">
+                                <h3 class="dropdown-nav-title">{{ cat.name|raw }}</h3>
+                                <ul>
+                                    {% for mod in model %}
+                                        <li><a href="">{{ mod.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {%  endfor %}
                     </div>
-                    {%  endfor %}
-                </div>
-            </li>
-        {% endfor %}
+                </li>
+            {% endfor %}
         </ul>
     </nav>
 </header>
