@@ -6,3 +6,4 @@ easy_admin:
                 fields:
                     - name
                     - model
+                    - brand

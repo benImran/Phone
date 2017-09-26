@@ -36,6 +36,26 @@ class Category
      */
     private $model;
 
+    /**
+     * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Brand",
+     *     inversedBy="category", cascade={"remove"})
+     */
+    private $brand;
+
+
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+
+    public function setBrand($brand)
+    {
+        $this->brand = $brand;
+        return $this;
+    }
+
 
     public function getModel()
     {
@@ -60,23 +80,13 @@ class Category
     }
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
+
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Category
-     */
+
     public function setName($name)
     {
         $this->name = $name;
@@ -84,11 +94,7 @@ class Category
         return $this;
     }
 
-    /**
-     * Get name
-     *
-     * @return string
-     */
+
     public function getName()
     {
         return $this->name;

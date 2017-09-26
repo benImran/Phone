@@ -95,7 +95,7 @@ class Product
 
 
     /**
-     * @ORM\ManyToOne(
+     * @ORM\OneToOne(
      *     targetEntity="PhoneBundle\Entity\Model",
      *     inversedBy="products")
      * @ORM\JoinColumn(nullable=true)

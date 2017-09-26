@@ -28,16 +28,9 @@ class Model
      */
     private $name;
 
-    /**
-     * @ORM\ManyToOne(
-     *     targetEntity="PhoneBundle\Entity\Brand",
-     *     inversedBy="models")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $brand;
 
     /**
-     * @ORM\ManyToOne(
+     * @ORM\OneToOne(
      *     targetEntity="PhoneBundle\Entity\Category",
      *     inversedBy="model")
      * @ORM\JoinColumn(nullable=true)
@@ -57,18 +50,6 @@ class Model
         return (string) $this->getName();
     }
 
-
-    public function getBrand()
-    {
-        return $this->brand;
-    }
-
-
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-        return $this;
-    }
 
     public function getId()
     {

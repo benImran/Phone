@@ -41,17 +41,16 @@ class Brand
 
     /**
      * @ORM\OneToMany(
-     *     targetEntity="PhoneBundle\Entity\Model",
+     *     targetEntity="PhoneBundle\Entity\Category",
      *     mappedBy="brand", cascade={"remove"})
      */
-    private $models;
-
-
+    private $category;
 
     public function __construct()
     {
-        $this->models = new ArrayCollection();
+        $this->category = new ArrayCollection();
     }
+
 
 
     public function __toString()
@@ -65,6 +64,7 @@ class Brand
         return $this->updatedAt;
     }
 
+
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
@@ -76,8 +76,6 @@ class Brand
         return $this->id;
     }
 
-
-
     public function setName($name)
     {
         $this->name = $name;
@@ -85,34 +83,38 @@ class Brand
         return $this;
     }
 
+
+
     public function getName()
     {
         return $this->name;
     }
 
-    public function addModel(\PhoneBundle\Entity\Model $model)
+    public function addModel(\PhoneBundle\Entity\Model $category)
     {
-        $this->models[] = $model;
+        $this->category[] = $category;
 
         return $this;
     }
 
-
-    public function removeModel(\PhoneBundle\Entity\Model $model)
+    public function removeModel(\PhoneBundle\Entity\Model $category)
     {
-        $this->models->removeElement($model);
-    }
-
-    public function getModels()
-    {
-        return $this->models;
+        $this->category->removeElement($category);
     }
 
 
-    public function setModels($models)
+    public function getCategory()
     {
-        $this->models = $models;
+        return $this->category;
+    }
+
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
         return $this;
     }
+
+
 
 }
