@@ -30,7 +30,7 @@ class Model
 
 
     /**
-     * @ORM\OneToOne(
+     * @ORM\ManyToOne(
      *     targetEntity="PhoneBundle\Entity\Category",
      *     inversedBy="model")
      * @ORM\JoinColumn(nullable=true)

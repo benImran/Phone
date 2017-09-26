@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eceb6a97-fdfd-4180-8a24-63e7e1263ffd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/admin/entities/model.yml" afterPath="$PROJECT_DIR$/app/config/admin/entities/model.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php" afterPath="$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,8 +87,8 @@
       <file leaf-file-name="_header.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="347">
+              <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -103,17 +104,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Product.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
-              <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="20" />
+              <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/admin/entities/model.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -205,15 +206,15 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sl.yml" />
         <option value="$PROJECT_DIR$/web/scss/ui/_header.scss" />
         <option value="$PROJECT_DIR$/app/config/admin/entities/product.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig" />
         <option value="$PROJECT_DIR$/src/PhoneBundle/Controller/HeaderController.php" />
         <option value="$PROJECT_DIR$/app/config/admin/entities/category.yml" />
         <option value="$PROJECT_DIR$/src/PhoneBundle/Entity/Brand.php" />
         <option value="$PROJECT_DIR$/app/config/admin/entities/brand.yml" />
         <option value="$PROJECT_DIR$/src/PhoneBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/PhoneBundle/Entity/Model.php" />
-        <option value="$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/app/config/admin/entities/model.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig" />
+        <option value="$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php" />
       </list>
     </option>
   </component>
@@ -623,7 +624,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235984000" />
+    <option name="totallyTimeSpent" value="236214000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,7 +637,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18497577" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -646,7 +646,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23011364" sideWeight="0.4676898" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23011364" sideWeight="0.4676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1056,28 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Controller/HeaderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#42#82#0#PHP" expanded="true" />
-            <element signature="e#288#307#1#PHP" expanded="true" />
-            <element signature="e#371#393#1#PHP" expanded="true" />
-            <element signature="e#457#476#1#PHP" expanded="true" />
-            <element signature="e#533#561#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Entity/Category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1104,18 +1082,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/admin/entities/model.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Controller/HeaderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#42#82#0#PHP" expanded="true" />
+            <element signature="e#288#307#1#PHP" expanded="true" />
+            <element signature="e#371#393#1#PHP" expanded="true" />
+            <element signature="e#457#476#1#PHP" expanded="true" />
+            <element signature="e#533#561#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
           <folding />
         </state>
       </provider>
