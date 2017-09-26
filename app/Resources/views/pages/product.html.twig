@@ -18,7 +18,7 @@
                 <p class="stock"> En stock</p>
                 <a href="">Livraison et retour gratuit</a>
                 <a href="" class="condition">Condition générales de ventes</a>
-                <a href="" class="panier"><i></i>Ajouter au panier</a>
+                <a href="{{ path('panier_add', { 'id': data.id }) }}" class="panier"><i></i>Ajouter au panier</a>
             </div>
         </div>
 
