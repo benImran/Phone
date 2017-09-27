@@ -28,7 +28,7 @@
                             <p class="subtitle">{{ list.title|raw }}</p>
                             <p class="description">{{ list.abstract|raw }}</p>
                             <p class="price">{{ list.rate }}€ TTC</p>
-                            <a href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
+                            <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
                         </div>
                     </div>
                   </a>
