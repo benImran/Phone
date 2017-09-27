@@ -17,6 +17,7 @@ easy_admin:
                     - detail
                     - type
                     - updatedAt
+                    - titleVideo
                     - youtubeId
             show:
                 fields:
@@ -32,6 +33,7 @@ easy_admin:
                     - detail
                     - type
                     - updatedAt
+                    - titleVideo
                     - youtubeId
             form:
                 fields:
@@ -49,5 +51,6 @@ easy_admin:
                     - { type: 'divider' }
                     - type
                     - updatedAt
+                    - titleVideo
                     - youtubeId
 

@@ -132,6 +132,11 @@ class Product
     private $visible;
 
     /**
+     * @ORM\Column(name="title_video", type="string", length=255)
+     */
+    private $titleVideo;
+
+    /**
      * @ORM\Column(name="youtube_id", type="string", length=255)
      */
     private $youtubeId;
@@ -146,7 +151,6 @@ class Product
         return $this->youtubeId;
     }
 
-
     public function setYoutubeId($youtubeId)
     {
         $this->youtubeId = $youtubeId;
@@ -160,6 +164,7 @@ class Product
         return $this;
     }
 
+
     public function getUpdatedAt()
     {
         return $this->updatedAt;
@@ -170,7 +175,6 @@ class Product
         $this->updatedAt = $updatedAt;
         return $this;
     }
-
 
     public function getId()
     {
@@ -190,6 +194,7 @@ class Product
     {
         return $this->title;
     }
+
 
     public function setReference($reference)
     {
@@ -215,11 +220,11 @@ class Product
         return $this->abstract;
     }
 
-
     public function getBrand()
     {
         return $this->brand;
     }
+
 
     public function setBrand($brand)
     {
@@ -251,7 +256,6 @@ class Product
         return $this->stock;
     }
 
-
     public function setDetail($detail)
     {
         $this->detail = $detail;
@@ -265,6 +269,7 @@ class Product
         return $this->detail;
     }
 
+
     public function setType($type)
     {
         $this->type = $type;
@@ -277,13 +282,13 @@ class Product
         return $this->type;
     }
 
-
     public function setVisible($visible)
     {
         $this->visible = $visible;
 
         return $this;
     }
+
 
     public function getVisible()
     {
@@ -343,6 +348,17 @@ class Product
     public function setModels($models)
     {
         $this->models = $models;
+        return $this;
+    }
+
+    public function getTitleVideo()
+    {
+        return $this->titleVideo;
+    }
+
+    public function setTitleVideo($titleVideo)
+    {
+        $this->titleVideo = $titleVideo;
         return $this;
     }
 
