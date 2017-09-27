@@ -19,9 +19,7 @@
             </div>
             <div class="menu-picto bag">
                 <p>{{ paniercount }}</p>
-                <a href="{{ path("panier_index") }}">
                     <img src="{{ asset('images/bag.png') }}" alt="bag">
-                </a>
             </div>
             <div class="menu-picto cart dropdown">
                 <h2>Mon Panier</h2>
@@ -49,7 +47,9 @@
                             <p class="price">254€</p>
                         </div>
                         <div class="all-button">
+                            <a href="{{ path('panier_index') }}">
                             <button class="cart-button">Voir mon panier</button>
+                            </a>
                             <button>Payer</button>
                         </div>
                     </div>
