@@ -17,12 +17,12 @@
     text-transform: uppercase;
 	}
    .bg {
-    width: 168.4px;
-    margin: 0 auto;
+    width: 100%;
     margin-top: 30px;
     position: relative;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    height: auto;
     background-position: center;
   }
   .product-description {
