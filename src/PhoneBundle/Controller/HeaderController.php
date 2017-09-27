@@ -17,11 +17,17 @@ class HeaderController extends Controller
 
         $model = $em->getRepository('PhoneBundle:Model')
             ->findAll();
-            
+
+        if(isset($_SESSION['panier'])){
+          $paniercount = array_sum($_SESSION['panier']);
+        }else {
+          $paniercount = 0;
+        }
         return $this->render('partials/_header.html.twig', [
             "navs" => $navs,
             "categ" => $categ,
-            "model" => $model
+            "model" => $model,
+            "paniercount" => $paniercount
         ]);
 
     }
