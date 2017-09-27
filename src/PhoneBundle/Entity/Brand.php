@@ -46,6 +46,30 @@ class Brand
      */
     private $category;
 
+    /**
+     * @ORM\OneToMany(
+     *     targetEntity="PhoneBundle\Entity\Product",
+     *     mappedBy="brand", cascade={"remove"})
+     */
+    private $products;
+
+    /**
+     * @return mixed
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param mixed $products
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
+        return $this;
+    }
+
     public function __construct()
     {
         $this->category = new ArrayCollection();

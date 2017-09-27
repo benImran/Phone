@@ -29,7 +29,10 @@ class Product
 
 
     /**
-     * @ORM\Column(type="string", length=240)
+     * @ORM\ManyToOne(
+     *     targetEntity="PhoneBundle\Entity\Brand",
+     *     inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $brand;
 

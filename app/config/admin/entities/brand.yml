@@ -7,12 +7,15 @@ easy_admin:
                     - id
                     - name
                     - category
+                    - products
             show:
                 fields:
                     - name
                     - category
+                    - products
             form:
                 fields:
                     - name
                     - category
+                    - products
 
