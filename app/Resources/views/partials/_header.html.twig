@@ -41,7 +41,7 @@
                                 <ul>
                                     {% for mod in model %}
                                       {% if mod.category == cat.name %}
-                                        <li><a href="{{ path('list_product') }}">{{ mod.name }}</a></li>
+                                        <li><a href="{{ path('list_product', { 'model': mod.name }) }}">{{ mod.name }}</a></li>
                                       {% endif %}
                                     {% endfor %}
                                 </ul>

@@ -17,8 +17,9 @@
                 </div>
             </div>
             {% for list in pagination %}
+              {% if list.models == model %}
                 <div class="col-6">
-            <a href="{{ path("product_sl", { "slug": list.slug}) }}">
+                  <a href="{{ path("product_sl", { "slug": list.slug}) }}">
                     <div class="row product">
                         <div class="col-2">
                             <div class="img">
@@ -31,9 +32,10 @@
                             <a href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
                         </div>
                     </div>
-            </a>
+                  </a>
                 </div>
-                {% endfor %}
+              {% endif %}
+            {% endfor %}
         </div>
     </div>
                 <div class="navigation">

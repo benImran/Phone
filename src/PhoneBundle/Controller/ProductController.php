@@ -12,14 +12,16 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ProductController extends EmController
 {
     /**
-     * @Route("/list", name="list_product")
+     * @Route("/list/{model}", name="list_product")
      */
     public function listAction(Request $request)
     {
+        $model = $request->attributes->get('model');
+
         $listproduct = self::$em->getRepository('PhoneBundle:Product');
         $query = $listproduct->createQueryBuilder('prod')
-            ->orderBy('prod.id', 'DESC')->getQuery();
-
+                             ->orderBy('prod.id', 'DESC')
+                             ->getQuery();
         $list = $query->getResult();
 
         /** @var Paginator $paginator */
@@ -36,7 +38,8 @@ class ProductController extends EmController
 
         return $this->render('pages/list_product.html.twig', [
                 "pagination" => $pagination,
-//                "product" => $product
+                // "product" => $product,
+                "model" => $model
             ]
         );
     }
