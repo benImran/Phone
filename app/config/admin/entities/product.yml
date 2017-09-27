@@ -5,6 +5,7 @@ easy_admin:
             list:
                 fields:
                     - id
+                    - brand
                     - visible
                     - title
                     - reference
@@ -19,6 +20,7 @@ easy_admin:
                     - youtubeId
             show:
                 fields:
+                    - brand
                     - visible
                     - title
                     - reference
@@ -33,6 +35,7 @@ easy_admin:
                     - youtubeId
             form:
                 fields:
+                    - brand
                     - visible
                     - title
                     - reference

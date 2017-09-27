@@ -33,29 +33,13 @@ class Product
      */
     private $brand;
 
-    /**
-     * @return mixed
-     */
-    public function getBrand()
-    {
-        return $this->brand;
-    }
 
-    /**
-     * @param mixed $brand
-     */
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-        return $this;
-    }
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=80)
      */
     private $title;
-
     /**
      * @var int
      *
@@ -63,12 +47,12 @@ class Product
      */
     private $reference;
 
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $image;
+
 
     /**
      * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
@@ -97,14 +81,14 @@ class Product
      */
     private $stock;
 
-
-
     /**
      * @var string
      *
      * @ORM\Column(name="detail", type="string", length=255)
      */
     private $detail;
+
+
 
     /**
      * @ORM\ManyToOne(
@@ -113,7 +97,6 @@ class Product
      * @ORM\JoinColumn(nullable=true)
      */
     private $type;
-
 
     /**
      * @ORM\ManyToOne(
@@ -129,6 +112,7 @@ class Product
      * @ORM\Column(type="string", unique=true, length=128)
      */
     private $slug;
+
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -157,7 +141,6 @@ class Product
         return (string) $this->getModels();
     }
 
-
     public function getYoutubeId()
     {
         return $this->youtubeId;
@@ -170,6 +153,7 @@ class Product
         return $this;
     }
 
+
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
@@ -180,7 +164,6 @@ class Product
     {
         return $this->updatedAt;
     }
-
 
     public function setUpdatedAt($updatedAt)
     {
@@ -201,6 +184,7 @@ class Product
 
         return $this;
     }
+
 
     public function getTitle()
     {
@@ -226,10 +210,21 @@ class Product
         return $this;
     }
 
-
     public function getAbstract()
     {
         return $this->abstract;
+    }
+
+
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+    public function setBrand($brand)
+    {
+        $this->brand = $brand;
+        return $this;
     }
 
     public function setRate($rate)

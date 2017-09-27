@@ -25,8 +25,8 @@ class ProductController extends EmController
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
-        $product = self::$em->getRepository('PhoneBundle:Product')
-           ->findOneBy(['id' => 'DESC']);
+//        $product = self::$em->getRepository('PhoneBundle:Product')
+//           ->findOneBy(['id' => 'DESC']);
 
         $pagination = $paginator->paginate(
             $list,
@@ -36,7 +36,7 @@ class ProductController extends EmController
 
         return $this->render('pages/list_product.html.twig', [
                 "pagination" => $pagination,
-                "product" => $product
+//                "product" => $product
             ]
         );
     }
