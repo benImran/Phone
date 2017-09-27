@@ -1,10 +1,10 @@
 {% extends "base.html.twig" %}
 {% block body %}
     <div class="container listing-produit">
-        <h1>APPLE</h1>
+        <h1>{{ brand }}</h1>
         <div class="row">
             <div class="col-2">
-                <h2>Iphone 7</h2>
+                <h2>{{ model }}</h2>
                 <div class="option">
                     <div class="choice">
                         <input type="checkbox">
@@ -17,7 +17,6 @@
                 </div>
             </div>
             {% for list in pagination %}
-              {% if list.models == model %}
                 <div class="col-6">
                   <a href="{{ path("product_sl", { "slug": list.slug}) }}">
                     <div class="row product">
@@ -34,7 +33,6 @@
                     </div>
                   </a>
                 </div>
-              {% endif %}
             {% endfor %}
         </div>
     </div>

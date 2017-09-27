@@ -17,12 +17,26 @@ class ProductController extends EmController
     public function listAction(Request $request)
     {
         $model = $request->attributes->get('model');
+        $listmodel = self::$em->getRepository('PhoneBundle:Model');
+        $querymod = $listmodel->createQueryBuilder('mod')
+                             ->where('mod.name = :name')
+                             ->setParameter('name', $model)
+                             ->getQuery();
+        $mod = $querymod->getResult();
 
         $listproduct = self::$em->getRepository('PhoneBundle:Product');
         $query = $listproduct->createQueryBuilder('prod')
+                             ->where('prod.models = :model')
+                             ->setParameter('model', $mod)
                              ->orderBy('prod.id', 'DESC')
                              ->getQuery();
         $list = $query->getResult();
+
+        if (!empty($list)) {
+          $brand = $list[0]->getBrand()->getName();
+        } else {
+          $brand = "Aucun Produit Associé";
+        }
 
         /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
@@ -39,7 +53,8 @@ class ProductController extends EmController
         return $this->render('pages/list_product.html.twig', [
                 "pagination" => $pagination,
                 // "product" => $product,
-                "model" => $model
+                "model" => $model,
+                "brand" => $brand
             ]
         );
     }
