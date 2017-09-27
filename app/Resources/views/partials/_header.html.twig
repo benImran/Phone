@@ -23,9 +23,37 @@
                     <img src="{{ asset('images/bag.png') }}" alt="bag">
                 </a>
             </div>
-            <div class="menu-picto cart">
+            <div class="menu-picto cart dropdown">
                 <h2>Mon Panier</h2>
-                <p>222</p>
+                <p class="price">222€</p>
+                <div class="dropdown-content">
+                    <div class="cart-hover">
+                        <div class="cart-product">
+                            <div style="background-image:url({{ asset('images/iphone-bg.jpg') }})" class="bg">
+                            </div>
+                            <div class="description">
+                                <div>
+                                    <h3>iphone 7</h3>
+                                    <p class="subtitle">Ecran LCD iPhone 7</p>
+                                </div>
+                                <div>
+                                    <p class="delete">&#215;</p>
+                                    <p class="price">64€</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commander">
+                        <div class="total">
+                            <h4>Total</h4>
+                            <p class="price">254€</p>
+                        </div>
+                        <div class="all-button">
+                            <button class="cart-button">Voir mon panier</button>
+                            <button>Payer</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

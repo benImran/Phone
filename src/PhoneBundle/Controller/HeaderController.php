@@ -18,6 +18,9 @@ class HeaderController extends Controller
         $model = $em->getRepository('PhoneBundle:Model')
             ->findAll();
 
+        $panier = $em->getRepository('PhoneBundle:Product')
+            ->findAll();
+
         if(isset($_SESSION['panier'])){
           $paniercount = array_sum($_SESSION['panier']);
         }else {
@@ -27,7 +30,8 @@ class HeaderController extends Controller
             "navs" => $navs,
             "categ" => $categ,
             "model" => $model,
-            "paniercount" => $paniercount
+            "paniercount" => $paniercount,
+            "panier" => $panier
         ]);
 
     }
