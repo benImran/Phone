@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/global.css" afterPath="$PROJECT_DIR$/web/css/global.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/global.css.map" afterPath="$PROJECT_DIR$/web/css/global.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scss/ui/_footer.scss" afterPath="$PROJECT_DIR$/web/scss/ui/_footer.scss" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PanierController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PanierController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Controller/PanierController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
@@ -105,6 +106,16 @@
                 <element signature="e#748#769#1#PHP" expanded="true" />
                 <element signature="e#1531#1552#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/scss/ui/_footer.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/admin/entities/footer.yml" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/PhoneBundle/Form/RegistrationType.php" />
@@ -185,6 +195,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/partials/_header.html.twig" />
         <option value="$PROJECT_DIR$/web/scss/ui/_header.scss" />
         <option value="$PROJECT_DIR$/src/PhoneBundle/Controller/PanierController.php" />
+        <option value="$PROJECT_DIR$/web/scss/ui/_footer.scss" />
       </list>
     </option>
   </component>
@@ -613,7 +624,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249952000" />
+    <option name="totallyTimeSpent" value="250276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,16 +692,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Controller/EmController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#42#82#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PhoneBundle/Entity/Footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="992">
@@ -1025,6 +1026,14 @@
             <element signature="e#748#769#1#PHP" expanded="true" />
             <element signature="e#1531#1552#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scss/ui/_footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
