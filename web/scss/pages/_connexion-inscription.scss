@@ -1,0 +1,150 @@
+.container.connect {
+  width: 560px;
+  margin: 0 auto;
+}
+.connect {
+  .title {
+    display: flex;
+    flex-direction: row;
+    h2 {
+      font-family: $roboto;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: -0.2px;
+      width: 280.5px;
+      height: 65px;
+      text-transform: uppercase;
+      text-align:center;
+      margin-right: -1px;
+      padding-top: 22px;
+      cursor: pointer;
+    }
+    .active {
+      border-left: 1px solid $warm-grey-three;
+      border-top:1px solid $warm-grey-three;
+      border-bottom: 1px solid $white;
+      border-right:1px solid $warm-grey-three;
+    }
+  }
+  .content {
+    border: 1px solid $warm-grey-three;
+    margin-top:-1px;
+    display: none;
+    &.active {
+      display: block;
+    }
+    h3 {
+      font-family: $roboto;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: -0.2px;
+      text-align: center;
+      padding: 30px 0;
+    }
+    .checkbox {
+      display: flex;
+      direction: row;
+      width: 265px;
+      margin: 0 auto 17px;
+      p {
+        font-family: $roboto;
+        font-size: 16px;
+        letter-spacing: -0.2px;
+        margin-left: 10px;
+      }
+    }
+    .input {
+      width: 260px;
+      margin : 0 auto;
+      margin-bottom: 20px;
+      p {
+        margin-bottom: 3px;
+        font-family: $roboto;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $warm-grey-two;
+      }
+      input {
+        width: 257px;
+        height: 40px;
+        border: solid 1px $warm-grey-three;
+        font-family: $roboto;
+        font-size: 14px;
+        font-weight: bold;
+        color: $purpley-grey;
+        &:focus {
+          border: solid 1px $black;
+          color: $black;
+        }
+      }
+    }
+    .input-date {
+      .inline {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        input {
+          &::placeholder {
+            text-align: center;
+            font-family: $roboto;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+        .jour {
+          width: 50px;
+        }
+        .mois {
+          width: 111px;
+        }
+        .annee {
+          width: 72px;
+        }
+      }
+    }
+    
+    a {
+      font-family: $roboto;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: -0.6px;
+      display: block;
+      text-align: center;
+      text-decoration: underline;
+    }
+    button {
+      border:none;
+      outline:none;
+      height: 19px;
+      font-family: $roboto;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.8px;
+      color:$white;
+      width: 150px;
+      height: 40px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .connexion, .inscription {
+      background-color: $peachy-pink;
+      display: block;
+      margin: 10px auto 0;
+    }
+    .reseau {
+      display: flex;
+      justify-content: space-between;
+      margin : 50px 35px 30px;
+      .fcb {
+        background-color: $blue-fb;
+      }
+      .google {
+        background-color: $red-google;
+      }
+      .twitter {
+        background-color: $blue-twitter;
+      }
+    }
+  }
+}

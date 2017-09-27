@@ -144,16 +144,6 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      &:before {
-        border-left: 20px solid $white;
-        border-top: 20px solid transparent;
-        border-bottom: 20px solid transparent;
-        content: '';
-        position: absolute;
-        top: 50%;
-        transform: translate(50%, -50%);
-        right: 50%;
-      }
     }
   }
 
