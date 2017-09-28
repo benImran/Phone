@@ -83,7 +83,7 @@ class ProductController extends EmController
         $pagination = $paginator->paginate(
             $list,
             $request->query->getInt('page', 1),
-            2
+            5
         );
 
         return $this->render('pages/search.html.twig', [
