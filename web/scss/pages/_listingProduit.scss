@@ -48,7 +48,7 @@
   .col-6 {
     width: 75%;
     .col-2 {
-      width: calc(33.333% - 25px);
+      width: calc(100%);
       margin-left: 25px;
       margin-bottom: 40px;
       cursor: pointer;
@@ -90,11 +90,13 @@
       }
       .img {
         margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+
         img {
           overflow: hidden;
-          width: 100%;
+          width: auto;
           height: 170px;
-          margin: 0 auto;
           display: block;
         }
       }

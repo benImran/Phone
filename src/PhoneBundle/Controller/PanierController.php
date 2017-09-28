@@ -14,115 +14,133 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class PanierController extends Controller
 {
-  /**
-   * Basket Page
-   *
-   * @Route("/panier", name="panier_index")
-   * @Method({"GET", "POST"})
-   */
-  public function panierIndex(){
-    if(!isset($_SESSION)){
-      session_start();
+    /**
+     * Basket Page
+     *
+     * @Route("/panier", name="panier_index")
+     * @Method({"GET", "POST"})
+     */
+    public function panierIndex(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        if(!isset($_SESSION['panier'])){
+            $_SESSION['panier'] = [];
+        }
+        $idpanier = array_keys($_SESSION['panier']);
+        $em = $this->getDoctrine()->getManager();
+        $produits = $em->getRepository('PhoneBundle:Product');
+        $query = $produits->createQueryBuilder('p')
+            ->where('p.id IN (:panier)')
+            ->setParameter('panier', $idpanier)
+            ->getQuery();
+        $panier = $query->getResult();
+        $qty = $_SESSION['panier'];
+        $stock = [];
+        foreach ($panier as $value) {
+            array_push($stock, $value->getRate());
+        }
+        $test = array_combine(array_values($stock), array_values($qty));
+        $total = 0;
+        foreach ($test as $prix => $nbr) {
+            $total = $total + ($prix * $nbr);
+        }
+        $paniercount = array_sum($_SESSION['panier']);
+
+
+        return $this->render('pages/panier.html.twig', [
+            'panier' => $panier,
+            'qty' => $qty,
+            'total' => $total,
+            'paniercount' => $paniercount,
+
+        ]);
     }
-    if(!isset($_SESSION['panier'])){
-      $_SESSION['panier'] = [];
+
+    /**
+     * Add to basket
+     *
+     * @Route("/panier/add", name="panier_add")
+     * @Method({"GET", "POST"})
+     */
+    public function panierAddAction(Request $request)
+    {
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        if(!isset($_SESSION['panier'])){
+            $_SESSION['panier'] = [];
+        }
+        $em = $this->getDoctrine()->getManager();
+        $produits = $em->getRepository('PhoneBundle:Product');
+        if(isset($_GET['id'])){
+            $query = $produits->createQueryBuilder('p')
+                ->where('p.id = :id')
+                ->setParameter('id', $_GET['id'])
+                ->getQuery();
+            $panier = $query->getResult();
+            if ($panier === '') {
+                // Panier Vide
+                die('lolol');
+            }
+            if (isset($_SESSION['panier'][$panier[0]->id])) {
+                $_SESSION['panier'][$panier[0]->id]++;
+            } else {
+                $_SESSION['panier'][$panier[0]->id] = 1;
+            }
+
+        } else {
+            // Produit introuvable
+            die('DIEEEEE');
+        }
+
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
-    $idpanier = array_keys($_SESSION['panier']);
-    $em = $this->getDoctrine()->getManager();
-    $produits = $em->getRepository('PhoneBundle:Product');
-    $query = $produits->createQueryBuilder('p')
-                      ->where('p.id IN (:panier)')
-                      ->setParameter('panier', $idpanier)
-                      ->getQuery();
-    $panier = $query->getResult();
-    $qty = $_SESSION['panier'];
 
-    return $this->render('pages/panier.html.twig', [
-        'panier' => $panier,
-        'qty' => $qty,
-    ]);
-  }
+    /**
+     * Delete From basket
+     *
+     * @Route("/panier/delete", name="panier_delete")
+     * @Method({"GET", "POST"})
+     */
+    public function panierDeleteAction(Request $request)
+    {
+        $produitid = $request->query->get('id');
+        unset($_SESSION['panier'][$produitid]);
 
-  /**
-   * Add to basket
-   *
-   * @Route("/panier/add", name="panier_add")
-   * @Method({"GET", "POST"})
-   */
-  public function panierAddAction(Request $request)
-  {
-    if(!isset($_SESSION)){
-      session_start();
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
-    if(!isset($_SESSION['panier'])){
-      $_SESSION['panier'] = [];
+
+
+    /**
+     * Plus one To basket
+     *
+     * @Route("/panier/QtyUp", name="qty_up")
+     * @Method({"GET", "POST"})
+     */
+    public function panierPlusAction(Request $request)
+    {
+        $produitid = $request->query->get('id');
+        $_SESSION['panier'][$produitid]++;
+
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
-    $em = $this->getDoctrine()->getManager();
-    $produits = $em->getRepository('PhoneBundle:Product');
-    if(isset($_GET['id'])){
-      $query = $produits->createQueryBuilder('p')
-                        ->where('p.id = :id')
-                        ->setParameter('id', $_GET['id'])
-                        ->getQuery();
-      $panier = $query->getResult();
-      if ($panier === '') {
-        // Panier Vide
-        die('lolol');
-      }
-      if (isset($_SESSION['panier'][$panier[0]->id])) {
-        $_SESSION['panier'][$panier[0]->id]++;
-      } else {
-        $_SESSION['panier'][$panier[0]->id] = 1;
-      }
 
-    } else {
-      // Produit introuvable
-      die('DIEEEEE');
+    /**
+     * Less one To basket
+     *
+     * @Route("/panier/QtyDown", name="qty_down")
+     * @Method({"GET", "POST"})
+     */
+    public function panierLessAction(Request $request)
+    {
+        $produitid = $request->query->get('id');
+        if ($_SESSION['panier'][$produitid] > 1) {
+            $_SESSION['panier'][$produitid]--;
+        } else {
+            unset($_SESSION['panier'][$produitid]);
+        }
+
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
-    return $this->redirectToRoute('panier_index');
-  }
-
-  /**
-   * Delete From basket
-   *
-   * @Route("/panier/delete", name="panier_delete")
-   * @Method({"GET", "POST"})
-   */
-  public function panierDeleteAction(Request $request)
-  {
-    $produitid = $request->query->get('id');
-    unset($_SESSION['panier'][$produitid]);
-    return $this->redirectToRoute('panier_index');
-  }
-
-
-  /**
-   * Plus one To basket
-   *
-   * @Route("/panier/QtyUp", name="qty_up")
-   * @Method({"GET", "POST"})
-   */
-  public function panierPlusAction(Request $request)
-  {
-    $produitid = $request->query->get('id');
-    $_SESSION['panier'][$produitid]++;
-    return $this->redirectToRoute('panier_index');
-  }
-
-  /**
-   * Less one To basket
-   *
-   * @Route("/panier/QtyDown", name="qty_down")
-   * @Method({"GET", "POST"})
-   */
-  public function panierLessAction(Request $request)
-  {
-    $produitid = $request->query->get('id');
-    if ($_SESSION['panier'][$produitid] > 1) {
-      $_SESSION['panier'][$produitid]--;
-    } else {
-      unset($_SESSION['panier'][$produitid]);
-    }
-    return $this->redirectToRoute('panier_index');
-  }
 }

@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container listing-produit">
+        <h1>Resutats pour la recherche : "{{ search }}"</h1>
+        <div class="row">
+            <div class="col-2">
+                <div class="option">
+                    <div class="choice">
+                        <input type="checkbox">
+                        <p>Prix le plus haut</p>
+                    </div>
+                    <div class="choice">
+                        <input type="checkbox">
+                        <p>Prix le plus bas</p>
+                    </div>
+                </div>
+            </div>
+            {% if pagination is empty %}
+                <h2>Aucun Resultats</h2>
+            {% else %}
+            {% for list in pagination %}
+                <div class="col-6">
+                  <a href="{{ path("product_sl", { "slug": list.slug}) }}">
+                    <div class="row product">
+                        <div class="col-2">
+                            <div class="img">
+                                <img src="{{ asset("/uploads/images/products/#{list.image}") }}" alt="iphone">
+                            </div>
+                            <h3>{{ list.brand }}</h3>
+                            <p class="subtitle">{{ list.title|raw }}</p>
+                            <p class="description">{{ list.abstract|raw }}</p>
+                            <p class="price">{{ list.rate }}€ TTC</p>
+                            <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+
+    </body>
+    </html>
+{% endblock %}

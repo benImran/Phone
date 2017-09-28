@@ -224,3 +224,227 @@
     }
   }
 }
+.panier_title {
+  text-align: center;
+  margin-top: 50px;
+  font: 25px "Roboto";
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.panier {
+  width: 760px;
+  margin: 30px auto 50px;
+  overflow: auto;
+  .article-panier {
+    width: 435px;
+    float: left;
+    position: relative;
+    .description-panier {
+      width: 80%;
+      height: 120px;
+      float: left;
+      img {
+        height: 100px;
+        float: left;
+      }
+      h5 {
+        font: 14px "Roboto";
+        font-weight: 500;
+        margin: 10px auto 7px;
+      }
+      p {
+        font: 12px "Roboto-Light";
+        margin-bottom: 7px;
+        span {
+          font-weight: bold;
+          color: $peachy-pink;
+        }
+      }
+    }
+    .info-article-panier {
+      i {
+        position: absolute;
+        top: 0;
+        right:0;
+      }
+      p {
+        font: 14px $roboto;
+        font-weight: bold;
+        color: $peachy-pink;
+        text-align: right;
+        margin: 30px auto 7px;
+      }
+      .quantite {
+        float: right;
+        .plus {
+          line-height: 13px;
+          text-align: center;
+          color: $white;
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+          background-color: $peachy-pink;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+        p {
+          display: inline-block;
+          margin: 5px;
+        }
+        .moins {
+          line-height: 13px;
+          text-align: center;
+          color: $white;
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+          background-color: $peachy-pink;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .adresse-livraison {
+    width: 435px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $warm-grey-two;
+    overflow: auto;
+    float: left;
+    position: relative;
+    h4 {
+      font: 20px $roboto;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+    ul {
+      margin-top: 10px;
+      li {
+        font: 16px $roboto;
+        letter-spacing: -1px;
+      }
+      li:last-child {
+        float: left;
+      }
+    }
+    a {
+      font:16px $roboto;
+      letter-spacing: -1px;
+      color: $peachy-pink;
+      text-decoration: underline;
+      float: right;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .type-paiement {
+    width: 435px;
+    padding-bottom: 15px;
+    overflow: auto;
+    float: left;
+    position: relative;
+    h4 {
+      margin-top: 15px;
+      font: 20px $roboto;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+    form {
+      width: 80%;
+      .input-field {
+        width: 100%;
+        overflow: auto;
+        label {
+          display: block;
+          text-transform: uppercase;
+          font: 14px $roboto;
+          font-weight: bold;
+          color: $warm-grey-two;
+          margin-top: 20px;
+        }
+        input {
+          width: 90%;
+          padding: 0 4%;
+          height: 40px;
+          font-size: 16px;
+          border: 1px solid $warm-grey-two;
+          -webkit-transition: 0.5s;
+          -moz-transition: 0.5s;
+          -ms-transition: 0.5s;
+          -o-transition: 0.5s;
+          transition: 0.5s;
+          &:focus {
+            border: 2px solid $black;
+            outline: none;
+          }
+        }
+        .input-expirate {
+          width: 5%;
+          margin-right: 3%;
+          float: left;
+        }
+        .ccv {
+          width: 10%;
+          overflow: auto;
+        }
+      }
+    }
+    button {
+      margin-top: 20px;
+    }
+  }
+  .total {
+    width: 260px;
+    float: right;
+    border: 1px solid $warm-grey-two;
+    .title-total {
+      margin: 25px 30px 0;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $warm-grey-two;
+      overflow: auto;
+      h4 {
+        font: 20px $roboto;
+        font-weight: bold;
+        float: left;
+      }
+      p {
+        font: 14px $roboto;
+        margin-top: 6px;
+        float: right;
+      }
+    }
+    .resume-total {
+      margin: 5px 30px 25px;
+      overflow: auto;
+      p {
+        font: 16px $roboto;
+        font-weight: 500;
+        float: left;
+        margin-top: 5px;
+      }
+      p.price {
+        float: right;
+        font-weight: bold;
+        color: $peachy-pink;
+      }
+    }
+    button {
+      margin: 10px auto;
+    }
+  }
+  button {
+    font-family: "Roboto", arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #ff9579;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+  }
+}

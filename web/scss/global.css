@@ -1,22 +1,22 @@
 /*
 Error: Invalid US-ASCII character "\xC2"
-        on line 25 of ui/_header.scss
+        on line 48 of ui/_header.scss
         from line 29 of global.scss
 
-20:     .container-menu {
-21:       display: inline-flex;
-22:       align-items:center;
-23:       float: right;
-24:       margin-right: 20px;
-25:       img {
-26:         width: 25px;
-27:         height: 25px;
-28:       }
-29:       .menu-picto {
-30:         margin-right: 20px;
+43:       display: inline-flex;
+44:       align-items: center;
+45:       position: absolute;
+46:       top: calc(50% - 40px);
+47:       right: 20px;
+48:       img {
+49:         width: 25px;
+50:         height: 25px;
+51:       }
+52:       .menu-picto {
+53:         margin-right: 20px;
 
 Backtrace:
-ui/_header.scss:25
+ui/_header.scss:48
 global.scss:29
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/util.rb:1297:in `block in find_encoding_error'
@@ -69,4 +69,4 @@ global.scss:29
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid US-ASCII character \"\xC2\"\A         on line 25 of ui/_header.scss\A         from line 29 of global.scss\A \A 20:     .container-menu {\A 21:       display: inline-flex;\A 22:       align-items:center;\A 23:       float: right;\A 24:       margin-right: 20px;\A 25:       img {\A 26:         width: 25px;\A 27:         height: 25px;\A 28:       }\A 29:       .menu-picto {\A 30:         margin-right: 20px;"; }
+  content: "Error: Invalid US-ASCII character \"\xC2\"\A         on line 48 of ui/_header.scss\A         from line 29 of global.scss\A \A 43:       display: inline-flex;\A 44:       align-items: center;\A 45:       position: absolute;\A 46:       top: calc(50% - 40px);\A 47:       right: 20px;\A 48:       img {\A 49:         width: 25px;\A 50:         height: 25px;\A 51:       }\A 52:       .menu-picto {\A 53:         margin-right: 20px;"; }

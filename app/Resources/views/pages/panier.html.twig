@@ -3,40 +3,63 @@
 {% block body %}
     <h1>Produits list</h1>
     {% if panier %}
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for produit in panier %}
-            {% set id = produit.id %}
-            <tr>
-                <td>{{ produit.title }}</td>
-                <td>{{ produit.rate }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('panier_delete', { 'id': produit.id }) }}">removepanier</a>
-                        </li>
-                        <li>
-                          <a href="{{ path('qty_down', { 'id': produit.id }) }}">-</a>
-                          {{ qty[id] }}
-                          <a href="{{ path('qty_up', { 'id': produit.id }) }}">+</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <!-- @TODO SAMY Gérer la redirection login + commandes POST après le paiement-->
-    <button type="button" name="button">Finaliser ma commande</button>
+        <div class="container">
+            <h3 class="panier_title">Panier</h3>
+            <section class="panier">
+                <div class="total">
+                    <div class="title-total">
+                        <h4>Total</h4>
+                        <p>{{ paniercount }} articles</p>
+                    </div>
+                    <div class="resume-total">
+                        <p>Livraison:</p>
+                        <p class="price">3,00 €</p>
+                        <p>Total à régler :</p>
+                        {% if paniercount is empty %}
+                            <p class="price">{{ total }} €</p>
+                        {% else %}
+                            <p class="price">{{ total + 3}} €</p>
+                        {% endif %}
+                    </div>
+                    <button>Paiement</button>
+                </div>
+                {% for produit in panier %}
+                    {% set id = produit.id %}
+                    <article class="article-panier">
+                        <div class="description-panier">
+                            <figure>
+                                <img src="{{ asset("/uploads/images/products/#{ produit.image }") }}" alt="{{ produit.title }}">
+                            </figure>
+                            <h5>{{ produit.models }}</h5>
+                            <p>{{ produit.title }}</p>
+                            <p>Prix unitaire : <span>{{ produit.rate }} €</span></p>
+                        </div>
+                        <div class="info-article-panier">
+                            <i class="ion-close"><a href="{{ path('panier_delete', { 'id': produit.id }) }}">&#215;</a></i>
+                            <p class="price">{{ produit.rate }} €</p>
+                            <div class="quantite">
+                                <div class="plus">
+                                    <a href="{{ path('qty_up', { 'id': produit.id }) }}">+</a>
+                                </div>
+                                <p>
+                                    {{ qty[id] }}
+                                </p>
+                                <div class="moins">
+                                    <a href="{{ path('qty_down', { 'id': produit.id }) }}">-</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        </div>
     {% else %}
-      <h2>Votre Panier est vide</h2>
+        <div class="container">
+            <h3 class="panier_title">Panier</h3>
+            <section class="panier">
+                <span>Votre Panier est vide</span>
+            </section>
+        </div>
     {% endif %}
 {% endblock %}
+

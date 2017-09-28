@@ -6,13 +6,14 @@ namespace PhoneBundle\Controller;
 use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 class ProductController extends EmController
 {
     /**
-     * @Route("/list/{model}", name="list_product")
+     * @Route("/list/{brand}/{model}", name="list_product")
      */
     public function listAction(Request $request)
     {
@@ -33,7 +34,7 @@ class ProductController extends EmController
         $list = $query->getResult();
 
         if (!empty($list)) {
-          $brand = $list[0]->getBrand()->getName();
+          $brand = $request->attributes->get('brand');;
         } else {
           $brand = "Aucun Produit Associé";
         }
@@ -55,6 +56,40 @@ class ProductController extends EmController
                 // "product" => $product,
                 "model" => $model,
                 "brand" => $brand
+            ]
+        );
+    }
+
+    /**
+     * @Route("/list/search", name="search_product")
+     * @Method({"GET", "POST"})
+     */
+    public function searchAction(Request $request)
+    {
+        $search = $_POST['search'];
+        $listproduct = self::$em->getRepository('PhoneBundle:Product');
+        $query = $listproduct->createQueryBuilder('prod')
+            ->where('prod.title LIKE :title')
+            ->setParameter('title', '%'.$search.'%')
+            ->orderBy('prod.id', 'DESC')
+            ->getQuery();
+        $list = $query->getResult();
+        /** @var Paginator $paginator */
+        $paginator = $this->get('knp_paginator');
+
+//        $product = self::$em->getRepository('PhoneBundle:Product')
+//           ->findOneBy(['id' => 'DESC']);
+
+        $pagination = $paginator->paginate(
+            $list,
+            $request->query->getInt('page', 1),
+            2
+        );
+
+        return $this->render('pages/search.html.twig', [
+                "pagination" => $pagination,
+                "search" => $search,
+                // "product" => $product,
             ]
         );
     }

@@ -1,141 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset=""> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <title>E-commerce Benchaa</title>
-    <meta description="Benchaa">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../web/images/favicon.jpg" sizes="32x32">
-    <!--build:css css/styles.min.css-->
-    <link rel="stylesheet" href="../web/css/global.css">
-    <!--endbuild-->
-  </head>
+  <!-- <meta charset=""> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <title>E-commerce Benchaa</title>
+  <meta description="Benchaa">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../web/images/favicon.jpg" sizes="32x32">
+  <!--build:css css/styles.min.css-->
+  <link rel="stylesheet" href="../web/css/global.css">
+  <!--endbuild-->
+</head>
 <body>
-  <header>
-    <div class="menu">
-      <h1>LOGO</h1>
-      <div class="container-menu">
-        <div class="menu-picto">
+<header>
+  <div class="menu">
+    <h1>LOGO</h1>
+    <div class="container-menu">
+      <div class="menu-picto">
         <form id="search">
           <input type="search" placeholder="Search">
         </form>
+      </div>
+      <div class="menu-picto user dropdown">
+        <img src="../web/images/person.png" alt="person">
+        <div class="dropdown-content">
+          <h2>Connexion</h2>
+          <input type="text" placeholder="Adresse e-mail">
+          <input type="password" placeholder="Mot de passe">
+          <p><a>Se connecter</a></p>
+          <p class="password-forget">Mot de passe oublié ? <a href="#">Inscrivez-vous</a></p>
         </div>
-        <div class="menu-picto user dropdown">
-          <img src="../web/images/person.png" alt="person">
-          <div class="dropdown-content">
-            <h2>Connexion</h2>
-            <input type="text" placeholder="Adresse e-mail">
-            <input type="password" placeholder="Mot de passe">
-            <p><a>Se connecter</a></p>
-            <p class="password-forget">Mot de passe oublié ? <a href="#">Inscrivez-vous</a></p>
-          </div>
-        </div>
-        <div class="menu-picto bag">
-          <p>0</p>
+      </div>
+      <div class="menu-picto bag">
+        <p>0</p>
         <img src="../web/images/bag.png" alt="bag">
-        </div>
-        <div class="menu-picto cart">
-          <h2>Mon Panier</h2>
-          <p>222</p>
-        </div>
+      </div>
+      <div class="menu-picto cart">
+        <h2>Mon Panier</h2>
+        <p>222</p>
       </div>
     </div>
-  </header>
-  
-  <div class="container connect">
-    <div class="title">
-      <h2 data-content='0'>Inscription</h2>
-      <h2 class="active" data-content='1'>Connexion</h1>
+  </div>
+</header>
+
+<div class="container connect">
+  <div class="title">
+    <h2 data-content='0'>Inscription</h2>
+    <h2 class="active" data-content='1'>Connexion</h1>
+  </div>
+  <div class="content active" data-content='1'>
+    <h3>Connexion avec une adresse e-mail</h3>
+    <div class="input">
+      <p>Adresse e-mail</p>
+      <input type="email" name="">
     </div>
-    <div class="content active" data-content='1'>
-      <h3>Connexion avec une adresse e-mail</h3>
-      <div class="input">
-        <p>Adresse e-mail</p>
-        <input type="email" name="">
-      </div>
-      <div class="input">
-        <p>Mot de passe</p>
-        <input type="password" name="">
-      </div>
-      <a href="">Mot de passe oublié ?</a>
-      <button class="connexion">Connexion</button>
-      <div class="reseau">
-        <button class="fcb">Facebook</button>
-        <button class="google">Google +</button>
-        <button class="twitter">Twitter</button>
-      </div>
+    <div class="input">
+      <p>Mot de passe</p>
+      <input type="password" name="">
     </div>
-    <div class="content" data-content='0'>
-      <h3>Connexion avec une adresse e-mail</h3>
-      <div class="checkbox">
-        <input type="checkbox" name="">
-        <p>M</p>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="">
-        <p>Mme</p>
-      </div>
-      <div class="input">
-        <p>nom</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>prénom</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Adresse e-mail</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Confirmation adresse e-mail</p>
-        <input type="text" name="">
-      </div>
-      <div class="input input-date">
-        <p>Confirmation adresse e-mail</p>
-        <div class="inline">
-          <input type="text" name="" placeholder="02" class="jour">
-          <input type="text" name="" placeholder="JUIN" class="mois">
-          <input type="text" name="" placeholder="1995" class="annee">
-        </div>
-      </div>
-      <div class="input">
-        <p>Adresse</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Complément d’adresse</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Code postal</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Ville</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Pays</p>
-        <input type="text" name="">
-      </div>
-      <div class="input">
-        <p>Mot de passe</p>
-        <input type="password" name="">
-      </div>
-      <div class="input">
-        <p>Confirmation mot de passe</p>
-        <input type="password" name="">
-      </div>
-      <button class="inscription">Inscription</button>
-      <div class="reseau">
-        <button class="fcb">Facebook</button>
-        <button class="google">Google +</button>
-        <button class="twitter">Twitter</button>
+    <a href="">Mot de passe oublié ?</a>
+    <button class="connexion">Connexion</button>
+    <div class="reseau">
+      <button class="fcb">Facebook</button>
+      <button class="google">Google +</button>
+      <button class="twitter">Twitter</button>
+    </div>
+  </div>
+  <div class="content" data-content='0'>
+    <h3>Connexion avec une adresse e-mail</h3>
+    <div class="checkbox">
+      <input type="checkbox" name="">
+      <p>M</p>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="">
+      <p>Mme</p>
+    </div>
+    <div class="input">
+      <p>nom</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>prénom</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Adresse e-mail</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Confirmation adresse e-mail</p>
+      <input type="text" name="">
+    </div>
+    <div class="input input-date">
+      <p>Confirmation adresse e-mail</p>
+      <div class="inline">
+        <input type="text" name="" placeholder="02" class="jour">
+        <input type="text" name="" placeholder="JUIN" class="mois">
+        <input type="text" name="" placeholder="1995" class="annee">
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../web/js/main.js"></script>
+    <div class="input">
+      <p>Adresse</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Complément d’adresse</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Code postal</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Ville</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Pays</p>
+      <input type="text" name="">
+    </div>
+    <div class="input">
+      <p>Mot de passe</p>
+      <input type="password" name="">
+    </div>
+    <div class="input">
+      <p>Confirmation mot de passe</p>
+      <input type="password" name="">
+    </div>
+    <button class="inscription">Inscription</button>
+    <div class="reseau">
+      <button class="fcb">Facebook</button>
+      <button class="google">Google +</button>
+      <button class="twitter">Twitter</button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../web/js/main.js"></script>
 </body>
 </html>
