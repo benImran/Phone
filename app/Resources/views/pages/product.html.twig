@@ -11,14 +11,22 @@
                 <span>Ref. {{ data.reference }}</span>
                 <p class="price">{{ data.rate }}€</p>
                 {#<div>#}
-                    {#<button value="+">+</button>#}
-                    {#<p>1</p>#}
-                    {#<button value="-">-</button>#}
+                {#<button value="+">+</button>#}
+                {#<p>1</p>#}
+                {#<button value="-">-</button>#}
                 {#</div>#}
-                <p class="stock"> En stock</p>
+                {% if data.stock > 0 %}
+                    <p class="stock"> En stock</p>
+                {% else %}
+                    <p class="rupture"> En rupture</p>
+                {% endif %}
                 <a href="">Livraison et retour gratuit</a>
                 <a href="" class="condition">Condition générales de ventes</a>
-                <a href="{{ path('panier_add', { 'id': data.id }) }}" class="panier"><i></i>Ajouter au panier</a>
+                {% if data.stock > 0 %}
+                    <a href="{{ path('panier_add', { 'id': data.id }) }}" class="panier"><i></i>Ajouter au panier</a>
+                {% else %}
+                    <a style="display: none" href="{{ path('panier_add', { 'id': data.id }) }}" class="panier"><i></i>Ajouter au panier</a>
+                {% endif %}
             </div>
         </div>
 

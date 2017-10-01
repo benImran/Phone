@@ -28,7 +28,12 @@
                             <p class="subtitle">{{ list.title|raw }}</p>
                             <p class="description">{{ list.abstract|raw }}</p>
                             <p class="price">{{ list.rate }}€ TTC</p>
+                            {% if list.stock > 0 %}
                             <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
+                            {% else %}
+                            <a style="display: none" class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
+                                <p style="color: red">Ce Produit n'est plus en stock</p>
+                            {% endif %}
                         </div>
                     </div>
                   </a>

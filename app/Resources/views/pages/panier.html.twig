@@ -26,6 +26,7 @@
                 {% for produit in panier %}
                     {% set id = produit.id %}
                     <article class="article-panier">
+                        <a href="{{ path("product_sl", { "slug": produit.slug}) }}">
                         <div class="description-panier">
                             <figure>
                                 <img src="{{ asset("/uploads/images/products/#{ produit.image }") }}" alt="{{ produit.title }}">
@@ -49,6 +50,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </article>
                 {% endfor %}
             </section>
