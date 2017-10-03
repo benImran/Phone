@@ -11,14 +11,21 @@
                 <span>Ref. {{ data.reference }}</span>
                 <p class="price">{{ data.rate }}€</p>
                 {#<div>#}
-                    {#<button value="+">+</button>#}
-                    {#<p>1</p>#}
-                    {#<button value="-">-</button>#}
+                {#<button value="+">+</button>#}
+                {#<p>1</p>#}
+                {#<button value="-">-</button>#}
                 {#</div>#}
-                <p class="stock"> En stock</p>
-                <a href="">Livraison et retour gratuit</a>
-                <a href="" class="condition">Condition générales de ventes</a>
-                <a href="{{ path('panier_add', { 'id': data.id }) }}" class="panier"><i></i>Ajouter au panier</a>
+                {% if data.stock >= 1 %}
+                    <p class="stock"> En stock</p>
+                    <a href="">Livraison et retour gratuit</a>
+                    <a href="" class="condition">Condition générales de ventes</a>
+                    <a href="{{ path('panier_add', { 'id': data.id }) }}" class="panier"><i></i>Ajouter au panier</a>
+                {% else %}
+                    <p class="rupture"> En réapprovisionnement</p>
+                    <a href="">Livraison et retour gratuit</a>
+                    <a href="" class="condition">Condition générales de ventes</a>
+                    <a class="panier" style="display: none"></a>
+                {% endif %}
             </div>
         </div>
 
@@ -32,38 +39,24 @@
         <div class="interesser">
             <h2>Ce qui pourrait vous intéressez</h2>
             <div class="row">
-                <div class="product-interesse">
-                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
+                {% for product in suggestion %}
+                    {% if product.visible == 1 %}
+                    <div class="product-interesse">
+                        <a href="{{ path('product_sl', {'slug' : product.slug}) }}">
+                            <div style="background-image:url({{ asset("/uploads/images/products/#{product.image}") }})" class="bg">
+                            </div>
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.rate }}€</p>
+                            <button>Découvrir</button>
+                        </a>
                     </div>
-                    <h3>Bouton home</h3>
-                    <p>29€</p>
-                    <button>Découvrir</button>
-                </div>
-                <div class="product-interesse">
-                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
-                    </div>
-                    <h3>Bouton home</h3>
-                    <p>29€</p>
-                    <button>Découvrir</button>
-                </div>
-                <div class="product-interesse">
-                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
-                    </div>
-                    <h3>Bouton home</h3>
-                    <p>29€</p>
-                    <button>Découvrir</button>
-                </div>
-                <div class="product-interesse">
-                    <div style="background-image:url({{ asset("/uploads/images/products/#{data.image}") }})" class="bg">
-                    </div>
-                    <h3>Bouton home</h3>
-                    <p>29€</p>
-                    <button>Découvrir</button>
-                </div>
+                {% else %}
+                <div class="row" style="display: none"></div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
-
 
     </body>
     </html>

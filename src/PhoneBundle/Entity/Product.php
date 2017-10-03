@@ -36,6 +36,13 @@ class Product
      */
     private $brand;
 
+    /**
+     * @ORM\ManyToMany(
+     *     targetEntity="PhoneBundle\Entity\Product")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $prodassoc;
+
 
     /**
      * @var string
@@ -43,25 +50,26 @@ class Product
      * @ORM\Column(name="title", type="string", length=80)
      */
     private $title;
+
+
     /**
      * @var int
      *
      * @ORM\Column(name="reference", type="integer")
      */
     private $reference;
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $image;
 
-
     /**
      * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
+
 
     /**
      * @var string
@@ -73,7 +81,7 @@ class Product
     /**
      * @var int
      *
-     * @ORM\Column(name="rate", type="integer")
+     * @ORM\Column(name="rate", type="float")
      */
     private $rate;
 
@@ -91,8 +99,6 @@ class Product
      */
     private $detail;
 
-
-
     /**
      * @ORM\ManyToOne(
      *     targetEntity="PhoneBundle\Entity\Type",
@@ -101,6 +107,8 @@ class Product
      */
     private $type;
 
+
+
     /**
      * @ORM\ManyToOne(
      *     targetEntity="PhoneBundle\Entity\Model",
@@ -108,7 +116,6 @@ class Product
      * @ORM\JoinColumn(nullable=true)
      */
     private $models;
-
 
     /**
      * @Gedmo\Slug(fields={"title"}, updatable=false)
@@ -122,6 +129,7 @@ class Product
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
 
     /**
      * @ORM\Column(type="datetime")
@@ -160,7 +168,6 @@ class Product
         return $this;
     }
 
-
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
@@ -173,6 +180,7 @@ class Product
         return $this->updatedAt;
     }
 
+
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
@@ -183,7 +191,6 @@ class Product
     {
         return $this->id;
     }
-
 
     public function setTitle($title)
     {
@@ -205,6 +212,7 @@ class Product
 
         return $this;
     }
+
 
     public function getReference()
     {
@@ -228,12 +236,12 @@ class Product
         return $this->brand;
     }
 
-
     public function setBrand($brand)
     {
         $this->brand = $brand;
         return $this;
     }
+
 
     public function setRate($rate)
     {
@@ -266,7 +274,6 @@ class Product
         return $this;
     }
 
-
     public function getDetail()
     {
         return $this->detail;
@@ -280,6 +287,7 @@ class Product
         return $this;
     }
 
+
     public function getType()
     {
         return $this->type;
@@ -292,11 +300,11 @@ class Product
         return $this;
     }
 
-
     public function getVisible()
     {
         return $this->visible;
     }
+
 
     public function getImage()
     {
@@ -362,6 +370,17 @@ class Product
     public function setTitleVideo($titleVideo)
     {
         $this->titleVideo = $titleVideo;
+        return $this;
+    }
+
+    public function getProdassoc()
+    {
+        return $this->prodassoc;
+    }
+
+    public function setProdassoc($prodassoc)
+    {
+        $this->prodassoc = $prodassoc;
         return $this;
     }
 

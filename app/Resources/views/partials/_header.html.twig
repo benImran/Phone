@@ -1,6 +1,8 @@
 <header>
     <div class="menu">
-        <a href="{{ path("homepage") }}"><h1 data-shadow="king phone">king phone</h1></a>
+        <a href="{{ path("homepage") }}">
+            <h1 data-shadow="king phone">king phone</h1>
+        </a>
         <div class="container-menu">
             <div class="menu-picto">
                 <form id="search" action="{{ path('search_product') }}" method="post">
@@ -28,37 +30,39 @@
                     {% if  panier is empty %}
                         <div class="cart-hover">
                             <div class="cart-product">
-                                <div class="description">
-                                    <div>
-                                        <h3>Panier Vide</h3>
+                                <a href="">
+                                    <div class="description">
+                                        <div>
+                                            <h3>Votre panier est vide</h3>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     {% else %}
-                    {% for produit in panier %}
-                        {% set id = produit.id %}
-                        <div class="cart-hover">
-                            <div class="cart-product">
-                                <div style="background-image:url({{ asset("/uploads/images/products/#{ produit.image }") }}); background-size: contain;background-position: left;" class="bg">
-                                </div>
-                                <div class="description">
-                                    <div>
-                                        <h3>{{ produit.models }}</h3>
-                                        <p class="subtitle">{{ produit.title }}</p>
+                        {% for produit in panier %}
+                            {% set id = produit.id %}
+                            <div class="cart-hover">
+                                <div class="cart-product">
+                                    <div class="bg" style="background-image:url({{ asset("/uploads/images/products/#{ produit.image }") }});">
                                     </div>
-                                    <div>
-                                        <p class="delete"><a href="{{ path('panier_delete', { 'id': produit.id }) }}">&#215;</a></p>
-                                        <p class="price">{{ produit.rate }}&#8364;</p>
+                                    <div class="description">
+                                        <div>
+                                            <a href="{{ path("product_sl", { "slug": produit.slug}) }}"><h3>{{ produit.models }}</h3>
+                                                <p class="subtitle">{{ produit.title }}</p>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <p class="delete"><a href="{{ path('panier_delete', { 'id': produit.id }) }}">&#215;</a></p>
+                                            <p class="price">{{ produit.rate }}&#8364;</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
                     {% endif %}
                     <div class="commander">
                         <div class="total">
-                            <h4>Total</h4>
+                            <h4>Total :</h4>
                             <p class="price">{{ total }}&#8364;</p>
                         </div>
                         <div class="all-button">

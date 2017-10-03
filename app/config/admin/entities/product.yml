@@ -8,6 +8,7 @@ easy_admin:
                     - brand
                     - visible
                     - title
+                    - prodassoc
                     - reference
                     - abstract
                     - rate
@@ -24,6 +25,7 @@ easy_admin:
                     - brand
                     - visible
                     - title
+                    - prodassoc
                     - reference
                     - abstract
                     - rate
@@ -40,6 +42,7 @@ easy_admin:
                     - brand
                     - visible
                     - title
+                    - prodassoc
                     - reference
                     - abstract
                     - rate
