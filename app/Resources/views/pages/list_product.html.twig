@@ -17,33 +17,37 @@
                 </div>
             </div>
             {% for list in pagination %}
-                <div class="col-6">
-                  <a href="{{ path("product_sl", { "slug": list.slug}) }}">
-                    <div class="row product">
-                        <div class="col-2">
-                            <div class="img">
-                                <img src="{{ asset("/uploads/images/products/#{list.image}") }}" alt="iphone">
+                {% if list.visible == 1 %}
+                    <div class="col-6">
+                        <a href="{{ path("product_sl", { "slug": list.slug}) }}">
+                            <div class="row product">
+                                <div class="col-2">
+                                    <div class="img">
+                                        <img src="{{ asset("/uploads/images/products/#{list.image}") }}" alt="iphone">
+                                    </div>
+                                    <h3>{{ list.brand }}</h3>
+                                    <p class="subtitle">{{ list.title|raw }}</p>
+                                    <p class="description">{{ list.abstract|raw }}</p>
+                                    <p class="price">{{ list.rate }}€ TTC</p>
+                                    {% if list.stock > 0 %}
+                                        <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
+                                    {% else %}
+                                        <a style="display: none" class="panier-listing-product" href=""></a>
+                                        <p style="color: red">Ce Produit n'est plus en stock</p>
+                                    {% endif %}
+                                </div>
                             </div>
-                            <h3>{{ list.brand }}</h3>
-                            <p class="subtitle">{{ list.title|raw }}</p>
-                            <p class="description">{{ list.abstract|raw }}</p>
-                            <p class="price">{{ list.rate }}€ TTC</p>
-                            {% if list.stock > 0 %}
-                            <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
-                            {% else %}
-                            <a style="display: none" class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
-                                <p style="color: red">Ce Produit n'est plus en stock</p>
-                            {% endif %}
-                        </div>
+                        </a>
                     </div>
-                  </a>
-                </div>
+                {% else %}
+                    <div class="col-6" style="display: none"></div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
-                <div class="navigation">
-                    {{ knp_pagination_render(pagination) }}
-                </div>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 
     </body>
     </html>

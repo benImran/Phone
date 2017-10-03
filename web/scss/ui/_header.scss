@@ -255,8 +255,8 @@ header {
                 height: auto;
                 position: relative;
                 background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
+                background-size: contain;
+                background-position: left;
                 margin-right: 20px;
               }
               .description {

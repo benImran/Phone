@@ -48,7 +48,7 @@ class ProductController extends EmController
         $pagination = $paginator->paginate(
             $list,
             $request->query->getInt('page', 1),
-            2
+            5
         );
 
         return $this->render('pages/list_product.html.twig', [
@@ -83,7 +83,7 @@ class ProductController extends EmController
         $pagination = $paginator->paginate(
             $list,
             $request->query->getInt('page', 1),
-            5
+            3
         );
 
         return $this->render('pages/search.html.twig', [
@@ -102,13 +102,34 @@ class ProductController extends EmController
         $data = self::$em->getRepository('PhoneBundle:Product')
             ->findOneBy(["slug" => $slug]);
 
+//        $model = $data->getModels();
+//        $produitid = $data->getId();
+//        $produits = self::$em->getRepository('PhoneBundle:Product');
+//        $query = $produits->createQueryBuilder('p')
+//            ->where('p.models = :model AND p.id != :id')
+//            ->setParameter('model', $model  )
+//            ->setParameter('id' , $produitid  )
+//            ->getQuery();
+//        $suggestion = $query->getResult();
+
+        $prodassoc = $data->getProdassoc();
+        $produitid = $data->getId();
+        $produits = self::$em->getRepository('PhoneBundle:Product');
+        $query = $produits->createQueryBuilder('p')
+            ->where('p IN (:prodassoc) AND p.id != :id')
+            ->setParameter('prodassoc', $prodassoc)
+            ->setParameter('id' , $produitid  )
+            ->getQuery();
+        $suggestion = $query->getResult();
+
         if(!$data) {
             throw new NotFoundHttpException("This article does not exist");
         }
 
         return $this->render(
             'pages/product.html.twig', [
-            "data" => $data
+            "data" => $data,
+            "suggestion" => $suggestion
         ]);
     }
 }
