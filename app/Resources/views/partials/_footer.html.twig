@@ -16,8 +16,10 @@
         </div>
         <div>
             <p class="title">Nous contacter</p>
+            {% if foot.visible == 1 %}
             <p>Email : <a>{{ foot.email }}</a></p>
             <p>Nous appeler : <a>{{ foot.phone }}</a></p>
+            {% endif %}
             <div class="reseau">
                 <img src="{{ asset('images/social-facebook-outline.png') }}">
                 <img src="{{ asset('images/social-instagram-outline.png') }}">

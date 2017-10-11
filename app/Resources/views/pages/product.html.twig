@@ -41,18 +41,18 @@
             <div class="row">
                 {% for product in suggestion %}
                     {% if product.visible == 1 %}
-                    <div class="product-interesse">
-                        <a href="{{ path('product_sl', {'slug' : product.slug}) }}">
-                            <div style="background-image:url({{ asset("/uploads/images/products/#{product.image}") }})" class="bg">
-                            </div>
-                            <h3>{{ product.title }}</h3>
-                            <p>{{ product.rate }}€</p>
-                            <button>Découvrir</button>
-                        </a>
-                    </div>
-                {% else %}
-                <div class="row" style="display: none"></div>
-                {% endif %}
+                        <div class="product-interesse">
+                            <a href="{{ path('product_sl', {'slug' : product.slug}) }}">
+                                <div style="background-image:url({{ asset("/uploads/images/products/#{product.image}") }})" class="bg">
+                                </div>
+                                <h3>{{ product.title }}</h3>
+                                <p>{{ product.rate }}€</p>
+                                <button>Découvrir</button>
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="row" style="display: none"></div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

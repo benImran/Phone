@@ -8,6 +8,7 @@ use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
@@ -15,6 +16,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RegistrationController extends BaseController
 {
+    /**
+     * @Route("/loginregister", name="loginregister")
+     */
     public function registerAction(Request $request)
     {
         /** @var $formFactory FactoryInterface */
@@ -34,6 +38,7 @@ class RegistrationController extends BaseController
         $form->setData($user);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
+            dump($form->isValid());
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
@@ -57,7 +62,10 @@ class RegistrationController extends BaseController
                 return $response;
             }
         }
-        return $this->render('@FOSUser/Registration/register.html.twig', [
+        /*return $this->render('@FOSUser/Registration/register.html.twig', [
+            'form' => $form->createView(),
+        ]);*/
+        return $this->render('pages/register.html.twig', [
             'form' => $form->createView(),
         ]);
     }

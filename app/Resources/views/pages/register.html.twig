@@ -1,0 +1,84 @@
+{#{% extends "base.html.twig" %}#}
+{% block body %}
+
+    <div class="content" data-content='0'>
+        <h3>Connexion avec une adresse e-mail</h3>
+        {{ form_start(form) }}
+        <div class="checkbox">
+            {{ form_widget(form.genre) }}
+            {{ form_errors(form.genre) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.nom) }}</p>
+            {{ form_widget(form.nom) }}
+            {{ form_errors(form.nom) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.prenom) }}</p>
+            {{ form_widget(form.prenom) }}
+            {{ form_errors(form.prenom) }}
+        </div>
+        <div class="input-user">
+            <p>{{ form_label(form.username) }}</p>
+            {{ form_widget(form.username) }}
+            {{ form_errors(form.username) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.email) }}</p>
+            {{ form_widget(form.email) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.confirmation_email) }}</p>
+            {{ form_widget(form.confirmation_email) }}
+            {{ form_errors(form.confirmation_email) }}
+        </div>
+        <div class="input input-date">
+            <p>{{ form_label(form.date_de_naissance) }}</p>
+            <div class="inline">
+                {{ form_widget(form.date_de_naissance) }}
+            </div>
+            {{ form_errors(form.date_de_naissance) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.adresse) }}</p>
+            {{ form_widget(form.adresse) }}
+            {{ form_errors(form.adresse) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.complement_adresse) }}</p>
+            {{ form_widget(form.complement_adresse) }}
+            {{ form_errors(form.complement_adresse) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.code_postale) }}</p>
+            {{ form_widget(form.code_postale) }}
+            {{ form_errors(form.code_postale) }}
+        </div>
+
+        <div class="input">
+            <p>{{ form_label(form.ville) }}</p>
+            {{ form_widget(form.ville) }}
+            {{ form_errors(form.ville) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.pays) }}</p>
+            {{ form_widget(form.pays) }}
+            {{ form_errors(form.pays) }}
+        </div>
+        <div class="input">
+            <p>{{ form_label(form.plainPassword) }}</p>
+            {{ form_widget(form.plainPassword) }}
+            {{ form_errors(form.plainPassword) }}
+        </div>
+
+        {{ form_widget(form.save, {'attr': {'class': 'inscription'}}) }}
+        {{ form_end(form) }}
+
+        <div class="reseau">
+            <button class="fcb">Facebook</button>
+            <button class="google">Google +</button>
+            <button class="twitter">Twitter</button>
+        </div>
+    </div>
+{% endblock %}

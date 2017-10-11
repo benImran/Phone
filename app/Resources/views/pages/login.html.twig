@@ -1,103 +1,32 @@
-{% extends "base.html.twig" %}
+{#{% extends "base.html.twig" %}#}
 {% block body %}
 
-<div class="container connect">
-    <div class="title">
-        <h2 data-content='0'>Inscription</h2>
-        <h2 class="active" data-content='1'>Connexion</h2>
-    </div>
     <div class="content active" data-content='1'>
         <h3>Connexion avec une adresse e-mail</h3>
-        <div class="input">
-            <p>Adresse e-mail</p>
-            <input type="email" name="">
-        </div>
-        <div class="input">
-            <p>Mot de passe</p>
-            <input type="password" name="">
-        </div>
-        <a href="">Mot de passe oublié ?</a>
-        <button class="connexion">Connexion</button>
-        <div class="reseau">
-            <button class="fcb">Facebook</button>
-            <button class="google">Google +</button>
-            <button class="twitter">Twitter</button>
-        </div>
-    </div>
-    <div class="content" data-content='0'>
-        <h3>Connexion avec une adresse e-mail</h3>
-        <div class="checkbox">
-            <input type="checkbox" name="">
-            <p>M</p>
-        </div>
-        <div class="checkbox">
-            <input type="checkbox" name="">
-            <p>Mme</p>
-        </div>
-        <div class="input">
-            <p>nom</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>prénom</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Adresse e-mail</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Confirmation adresse e-mail</p>
-            <input type="text" name="">
-        </div>
-        <div class="input input-date">
-            <p>Confirmation adresse e-mail</p>
-            <div class="inline">
-                <input type="text" name="" placeholder="02" class="jour">
-                <input type="text" name="" placeholder="JUIN" class="mois">
-                <input type="text" name="" placeholder="1995" class="annee">
-            </div>
-        </div>
-        <div class="input">
-            <p>Adresse</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Complément d’adresse</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Code postal</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Ville</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Pays</p>
-            <input type="text" name="">
-        </div>
-        <div class="input">
-            <p>Mot de passe</p>
-            <input type="password" name="">
-        </div>
-        <div class="input">
-            <p>Confirmation mot de passe</p>
-            <input type="password" name="">
-        </div>
-        <button class="inscription">Inscription</button>
-        <div class="reseau">
-            <button class="fcb">Facebook</button>
-            <button class="google">Google +</button>
-            <button class="twitter">Twitter</button>
-        </div>
-    </div>
-    {% block javascripts %}
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js')"></script>
-        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
-    {% endblock %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
 
-    </body>
-    </html>
-    {% endblock %}
+            <div class="input">
+                <p>Adresse e-mail</p>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+            </div>
+            <div class="input">
+                <p>Mot de passe</p>
+                <input type="password" id="password" name="_password" required="required" />
+            </div>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">{{ 'security.login.remember_me'| trans }}</label>
+
+            <input type="submit" class="connexion" id="_submit" name="_submit" value="Connexion" />
+        </form>
+        <a href="" class="forget-password" >Mot de passe oublié ?</a>
+        <div class="reseau">
+            <button class="fcb">Facebook</button>
+            <button class="google">Google +</button>
+            <button class="twitter">Twitter</button>
+        </div>
+    </div>
+
+{% endblock %}

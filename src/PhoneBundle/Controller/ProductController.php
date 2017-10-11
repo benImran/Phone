@@ -74,16 +74,16 @@ class ProductController extends EmController
             ->orderBy('prod.id', 'DESC')
             ->getQuery();
         $list = $query->getResult();
-        /** @var Paginator $paginator */
+//        /** @var Paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
 //        $product = self::$em->getRepository('PhoneBundle:Product')
 //           ->findOneBy(['id' => 'DESC']);
 
         $pagination = $paginator->paginate(
-            $list,
-            $request->query->getInt('page', 1),
-            3
+            $list
+//            $request->query->getInt('page', 1),
+//            3
         );
 
         return $this->render('pages/search.html.twig', [
@@ -101,16 +101,6 @@ class ProductController extends EmController
     {
         $data = self::$em->getRepository('PhoneBundle:Product')
             ->findOneBy(["slug" => $slug]);
-
-//        $model = $data->getModels();
-//        $produitid = $data->getId();
-//        $produits = self::$em->getRepository('PhoneBundle:Product');
-//        $query = $produits->createQueryBuilder('p')
-//            ->where('p.models = :model AND p.id != :id')
-//            ->setParameter('model', $model  )
-//            ->setParameter('id' , $produitid  )
-//            ->getQuery();
-//        $suggestion = $query->getResult();
 
         $prodassoc = $data->getProdassoc();
         $produitid = $data->getId();

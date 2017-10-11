@@ -16,9 +16,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-6">
             {% for list in pagination %}
                 {% if list.visible == 1 %}
-                    <div class="col-6">
                         <a href="{{ path("product_sl", { "slug": list.slug}) }}">
                             <div class="row product">
                                 <div class="col-2">
@@ -38,11 +38,11 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
                 {% else %}
                     <div class="col-6" style="display: none"></div>
                 {% endif %}
             {% endfor %}
+                </div>
         </div>
     </div>
     <div class="navigation">

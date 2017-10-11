@@ -5,8 +5,10 @@ namespace PhoneBundle\Form;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
+
 
 class RegistrationType extends AbstractType
 {
@@ -22,6 +24,8 @@ class RegistrationType extends AbstractType
         $builder->add('code_postale');
         $builder->add('ville');
         $builder->add('pays', CountryType::class);
+        $builder ->add('save', SubmitType::class, ['label' => 'Inscription']);
+        $builder->add('username',null, ['required' => false]);
     }
     public function getParent()
     {

@@ -26,6 +26,7 @@
       border-right:1px solid $warm-grey-three;
     }
   }
+
   .content {
     border: 1px solid $warm-grey-three;
     margin-top:-1px;
@@ -44,7 +45,7 @@
     }
     .checkbox {
       display: flex;
-      direction: row;
+      flex-direction: row;
       width: 265px;
       margin: 0 auto 17px;
       p {
@@ -80,6 +81,10 @@
         }
       }
     }
+    .input-user {
+      display: none;
+    }
+
     .input-date {
       .inline {
         display: flex;
@@ -132,6 +137,15 @@
       background-color: $peachy-pink;
       display: block;
       margin: 10px auto 0;
+    }
+    .forget-password {
+      margin: 20px auto;
+      font-family: Roboto,arial,sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #848484;
+      text-decoration: none;
     }
     .reseau {
       display: flex;
