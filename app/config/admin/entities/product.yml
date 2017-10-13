@@ -5,43 +5,43 @@ easy_admin:
             list:
                 fields:
                     - id
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
                     - brand
-                    - visible
                     - title
-                    - prodassoc
-                    - reference
-                    - abstract
+#                    - prodassoc
+#                    - reference
+#                    - abstract
                     - rate
                     - stock
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-                    - models
-                    - detail
-                    - type
-                    - updatedAt
-                    - titleVideo
-                    - youtubeId
+                    - visible
+#                    - models
+#                    - detail
+#                    - type
+#                    - updatedAt
+#                    - titleVideo
+#                    - youtubeId
             show:
                 fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
                     - brand
-                    - visible
                     - title
-                    - prodassoc
-                    - reference
-                    - abstract
+#                    - prodassoc
+#                    - reference
+#                    - abstract
                     - rate
                     - stock
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-                    - models
-                    - detail
-                    - type
-                    - updatedAt
-                    - titleVideo
-                    - youtubeId
+                    - visible
+#                    - models
+#                    - detail
+#                    - type
+#                    - updatedAt
+#                    - titleVideo
+#                    - youtubeId
             form:
                 fields:
                     - brand
-                    - visible
                     - title
+                    - visible
                     - prodassoc
                     - reference
                     - abstract

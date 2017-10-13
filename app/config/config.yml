@@ -86,10 +86,22 @@ vich_uploader:
 
 ivory_ck_editor:
     input_sync: true
+    default_config: my_config
     configs:
         my_config:
+#            extraPlugins: 'image2, widget, dialog'
             toolbar: "full"
             language: fr_FR
+#    plugins:
+#        image2:
+#            path:     "bundles/ivoryckeditor/plugins/image2/"
+#            filename: "plugin.js"
+#        widget:
+#            path:     "/bundles/ivoryckeditor/plugins/widget/"
+#            filename: "plugin.js"
+#        dialog:
+#            path:     "/bundles/ivoryckeditor/plugins/dialog/"
+#            filename: "plugin.js"
 
 fos_user:
     db_driver: orm

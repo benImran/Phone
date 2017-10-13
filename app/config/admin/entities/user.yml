@@ -2,6 +2,14 @@ easy_admin:
     entities:
         User:
             class: PhoneBundle\Entity\User
+            list:
+                fields:
+                    - username
+                    - email
+                    - lastLogin
+                    - nom
+                    - prenom
+#                    - date_de_naissance
             form:
                 fields:
                     - username
