@@ -32,7 +32,7 @@
         <div class="video">
             <h2>{{ data.titleVideo }}</h2>
             <div class="bg">
-                <iframe width="630" height="315" src="https://www.youtube.com/embed/{{ data.youtubeId }}" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/{{ data.youtubeId }}" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -45,9 +45,13 @@
                             <a href="{{ path('product_sl', {'slug' : product.slug}) }}">
                                 <div style="background-image:url({{ asset("/uploads/images/products/#{product.image}") }})" class="bg">
                                 </div>
-                                <h3>{{ product.title }}</h3>
-                                <p>{{ product.rate }}€</p>
+                                <div class="espace">
+                                <div>
+                                    <h3>{{ product.title }}</h3>
+                                    <p>{{ product.rate }}€</p>
+                                </div>
                                 <button>Découvrir</button>
+                                </div>
                             </a>
                         </div>
                     {% else %}

@@ -1,59 +1,92 @@
 .container.product {
-  max-width:920px;
-  margin:0 auto 100px;
+  max-width: 920px;
+  margin: 0 auto 100px;
 }
 .row-product {
   display: flex;
   justify-content: space-between;
+  padding:0 20px;
+  @include maxWidth($Mobile) {
+    flex-direction:column;
+  }
 }
 .product {
-	h1 {
-		font-family: $roboto;
-		font-size: 25px;
-		font-weight: bold;
-		letter-spacing: -0.2px;
-		text-align:center;
+  h1 {
+    font-family: $roboto;
+    font-size: em(25);
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    text-align:center;
     margin: 50px 0;
     text-transform: uppercase;
-	}
-   .bg {
-    width: 100%;
+    @include maxWidth($TabletPortrait) {
+      margin:50px 0 25px;
+    }
+  }
+ .bg {
+    width: 50%;
     margin-top: 30px;
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
     height: auto;
     background-position: center;
+    @include maxWidth($Mobile) {
+     height:200px;
+     margin:0 auto;
+     width:100%;
+    }
   }
   .product-description {
     width: 400px;
     text-align: right;
+    @include maxWidth($Mobile) {
+      text-align: left;
+      max-width: 100%;
+      width:465px;
+      margin: 20px auto 0;
+    }
     h2 {
       font-family: $roboto;
-      font-size: 30px;
+      font-size: em(30);
       font-weight: bold;
       letter-spacing: -0.3px;
       margin-bottom: 20px;
+      @include maxWidth($TabletPortrait) {
+        font-size: em(24);
+      }
+      @include maxWidth($Mobile) {
+        font-size:em(20);
+      }
     }
     p {
       font-family: $roboto;
-      font-size: 16px;
+      font-size: em(16);
       margin-bottom: 5px;
+      @include maxWidth($Mobile) {
+        font-size:em(14);
+      }
     }
     span {
       font-family: $roboto;
-      font-size: 10px;
+      font-size: em(10);
       font-weight: bold;
       letter-spacing: -0.1px;
       color: $warm-grey-two;
       margin-bottom: 4px;
     }
     .price {
-      font-size: 25px;
+      font-size: em(25);
       font-weight: bold;
       letter-spacing: -1.2px;
       color: $peachy-pink;
       margin-bottom: 15px;
+      @include maxWidth($TabletPortrait) {
+        font-size: em(22);
+      }
+      @include maxWidth($Mobile) {
+        font-size:em(18);
+      }
     }
     div {
       display: flex;
@@ -73,33 +106,36 @@
         }
       }
       p {
-        font-size: 25px;
+        font-size: em(25);
         font-weight: bold;
         letter-spacing: -1.2px;
         margin: 0 15px;
       }
     }
     .stock {
-      font-size: 16px;
+      font-size: em(16);
       font-weight: 500;
       letter-spacing: -0.2px;
       color: $seaweed-green;
       margin-bottom: 30px;
     }
     .rupture {   
-      font-size: 16px;   
+      font-size: em(16);
       font-weight: 500;    
       letter-spacing: -0.2px;    
       color: red;    
       margin-bottom: 30px;   
     }
     a {
-      font-size: 11px;
+      font-size: em(11);
       font-weight: 300;
       text-decoration: underline;
       display: flex;
       flex-direction: row-reverse;
       margin-bottom: 5px;
+      @include maxWidth($Mobile) {
+        flex-direction: row;
+      }
     }
     .condition {
       margin-bottom: 15px;
@@ -109,13 +145,17 @@
       height: 40px;
       border-radius: 3px;
       display: inline;
-      font-size: 16px;
+      font-size: em(16);
       font-weight: 500;
       text-decoration: none;
       background-color: $peachy-pink;
       position: relative;
       color: $white;
       font-family: $roboto;
+      @include maxWidth($TabletPortrait) {
+        font-size: em(12);
+        text-transform: uppercase;
+      }
       &:hover {
         background-color:$peachy-pink-hover;
       }
@@ -132,32 +172,55 @@
 
   .video {
     font-family: $roboto;
-    font-size: 20px;
-    letter-spacing: -1px;
+    font-size: em(20);
     text-align: center;
-    margin-top: 70px;
+    margin-top: 90px;
+    @include maxWidth($TabletPortrait) {
+      margin-top: 60px;
+    }
     h2 {
       text-transform: uppercase;
       font-family: $roboto;
-      font-size: 20px;
-      letter-spacing: -1px;
+      font-size: em(20);
+      @include maxWidth($TabletPortrait) {
+        font-size: em(16);
+      }
+      @include maxWidth($Mobile) {
+        font-size:em(11);
+        padding:0 10px;
+      }
     }
     .bg {
-      width: 680px;
-      height: 280px;
       margin: 0 auto;
       margin-top: 30px;
       position: relative;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      height: auto;
+    }
+    iframe {
+      width:100%;
+      height:315px;
+      @include maxWidth($TabletPortrait) {
+        height:200px;
+      }
+      @include  maxWidth($Mobile) {
+        height:238px;
+        width:85%;
+      }
     }
   }
 
   .interesser {
+    .espace {
+      @include maxWidth($Mobile) {
+        display: flex;
+        flex-direction: column;
+        height: 135px;
+        justify-content: space-between;
+      }
+    }
     h2 {
       font-family: $roboto;
-      font-size: 20px;
+      font-size: em(20);
       font-weight: bold;
       letter-spacing: 1px;
       text-align:center;
@@ -165,6 +228,12 @@
       position: relative;
       margin-top: 45px;
       margin-bottom: 30px;
+      @include maxWidth($TabletPortrait) {
+        font-size: em(16);
+      }
+      @include maxWidth($Mobile) {
+        font-size: em(13);
+      }
       &:after {
         width: 300px;
         height: 2px;
@@ -174,11 +243,19 @@
         top: 45px;
         left: 50%;
         transform: translateX(-50%);
+        @include maxWidth($TabletPortrait) {
+          top: 25px;
+        }
+        @include maxWidth($Mobile) {
+          width: 150px;
+        }
       }
     }
     .row {
       display: flex;
       flex-direction: row;
+      flex-wrap:wrap;
+      padding:0 10px;
     }
     .product-interesse {
       width: calc(25% - 10px);
@@ -186,33 +263,59 @@
       text-align: center;
       cursor: pointer;
       padding-bottom: 20px;
+      @include maxWidth($TabletPortrait) {
+        width:33.333%;
+        padding:0 10px;
+        margin-left:0;
+      }
+      @include maxWidth($Mobile) {
+        width: 50%;
+      }
+
       &:hover {
         border-bottom:1px solid $warm-grey;
       }
       .bg {
-        width: 170px;
+        width: auto;
         height: 170px;
         margin: 0 auto;
         margin-top: 30px;
         position: relative;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        @include  maxWidth($TabletPortrait) {
+          margin-top:0;
+        }
       }
       h3 {
         font-family: $roboto;
-        font-size: 20px;
+        font-size: em(16);
         font-weight: 300;
         letter-spacing: 1px;
         margin-top: 20px;
+        @include maxWidth($TabletPortrait) {
+          font-size: em(14);
+        }
+        @include maxWidth($Mobile) {
+          font-size: em(12);
+          margin-top:10px;
+          text-align: left;
+        }
       }
       p {
         font-family: $roboto;
-        font-size: 20px;
+        font-size: em(16);
         font-weight: bold;
         letter-spacing: 1px;
         color: $peachy-pink;
         margin-top: 5px;
+        @include maxWidth($TabletPortrait) {
+          font-size: em(14);
+        }
+        @include maxWidth($Mobile) {
+          font-size: em(12);
+        }
       }
       button {
         margin-top: 20px;
@@ -224,6 +327,11 @@
         border:none;
         outline:none;
         cursor: pointer;
+        @include maxWidth($TabletPortrait) {
+          width: 100px;
+          height: 28px;
+          margin: 20px auto 0;
+        }
         &:hover {
           background-color:$peachy-pink-hover;
         }
@@ -234,7 +342,7 @@
 .panier_title {
   text-align: center;
   margin-top: 50px;
-  font: 25px "Roboto";
+  font: 25px $roboto;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -255,12 +363,12 @@
         float: left;
       }
       h5 {
-        font: 14px "Roboto";
+        font: 14px $roboto;
         font-weight: 500;
         margin: 10px auto 7px;
       }
       p {
-        font: 12px "Roboto-Light";
+        font: 12px $roboto;
         margin-bottom: 7px;
         span {
           font-weight: bold;
@@ -374,7 +482,7 @@
           width: 90%;
           padding: 0 4%;
           height: 40px;
-          font-size: 16px;
+          font-size: em(16);
           border: 1px solid $warm-grey-two;
           -webkit-transition: 0.5s;
           -moz-transition: 0.5s;
@@ -441,8 +549,8 @@
     }
   }
   button {
-    font-family: "Roboto", arial, sans-serif;
-    font-size: 16px;
+    font-family: $roboto;
+    font-size: em(16);
     font-weight: 500;
     color: #fff;
     width: 150px;
