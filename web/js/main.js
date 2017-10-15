@@ -1,5 +1,6 @@
 $(document).ready(function() {
     toggleInscriptionConnexion();
+    enableInfoListingProduct();
 });
 
 var toggleInscriptionConnexion = function() {
@@ -16,3 +17,11 @@ var toggleInscriptionConnexion = function() {
         }
     });
 };
+
+
+var enableInfoListingProduct = function () {
+    $('.listing-produit .col-2 h2').on('click', function() {
+        console.log('e');
+        $(this).next().toggleClass('active');
+    });
+}
