@@ -9,7 +9,7 @@ security:
 
     providers:
         fos_userbundle:
-                id: fos_user.user_provider.username
+                id: fos_user.user_provider.username_email
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -20,12 +20,17 @@ security:
         main:
             pattern: ^/
             form_login:
+                login_path: /loginregister
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
                 default_target_path:            /admin
                 target_path_parameter:          _target_path
                 use_referer:                    false
+
+                failure_path:    /loginregister
+                failure_forward: false
+                failure_path_parameter: _failure_path
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
 
