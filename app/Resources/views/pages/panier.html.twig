@@ -27,29 +27,29 @@
                     {% set id = produit.id %}
                     <article class="article-panier">
                         <a href="{{ path("product_sl", { "slug": produit.slug}) }}">
-                        <div class="description-panier">
-                            <figure>
-                                <img src="{{ asset("/uploads/images/products/#{ produit.image }") }}" alt="{{ produit.title }}">
-                            </figure>
-                            <h5>{{ produit.models }}</h5>
-                            <p>{{ produit.title }}</p>
-                            <p>Prix unitaire : <span>{{ produit.rate }} €</span></p>
-                        </div>
-                        <div class="info-article-panier">
-                            <i class="ion-close"><a href="{{ path('panier_delete', { 'id': produit.id }) }}">&#215;</a></i>
-                            <p class="price">{{ produit.rate }} €</p>
-                            <div class="quantite">
-                                <div class="plus">
-                                    <a href="{{ path('qty_up', { 'id': produit.id }) }}">+</a>
-                                </div>
-                                <p>
-                                    {{ qty[id] }}
-                                </p>
-                                <div class="moins">
-                                    <a href="{{ path('qty_down', { 'id': produit.id }) }}">-</a>
+                            <div class="description-panier">
+                                <figure>
+                                    <img src="{{ asset("/uploads/images/products/#{ produit.image }") }}" alt="{{ produit.title }}">
+                                </figure>
+                                <h5>{{ produit.models }}</h5>
+                                <p>{{ produit.title }}</p>
+                                <p>Prix unitaire : <span>{{ produit.rate }} €</span></p>
+                            </div>
+                            <div class="info-article-panier">
+                                <i class="ion-close"><a href="{{ path('panier_delete', { 'id': produit.id }) }}">&#215;</a></i>
+                                <p class="price">{{ produit.rate }} €</p>
+                                <div class="quantite">
+                                    <div class="plus">
+                                        <a href="{{ path('qty_up', { 'id': produit.id }) }}">+</a>
+                                    </div>
+                                    <p>
+                                        {{ qty[id] }}
+                                    </p>
+                                    <div class="moins">
+                                        <a href="{{ path('qty_down', { 'id': produit.id }) }}">-</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </a>
                     </article>
                 {% endfor %}
