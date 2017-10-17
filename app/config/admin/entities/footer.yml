@@ -4,16 +4,16 @@ easy_admin:
             class: PhoneBundle\Entity\Footer
             list:
                 fields:
-                    - visible
                     - email
                     - phone
+                    - visible
             show:
                 fields:
-                    - visible
                     - email
                     - phone
+                    - visible
             form:
                 fields:
-                    - visible
                     - email
                     - phone
+                    - visible

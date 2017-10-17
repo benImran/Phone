@@ -2,8 +2,13 @@ easy_admin:
     entities:
         Category:
             class: PhoneBundle\Entity\Category
-            form:
+            list:
                 fields:
+                    - brand
                     - name
                     - model
+            form:
+                fields:
                     - brand
+                    - name
+                    - model

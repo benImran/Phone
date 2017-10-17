@@ -4,7 +4,7 @@ easy_admin:
             class: PhoneBundle\Entity\Product
             list:
                 fields:
-                    - id
+#                    - id
                     - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
                     - brand
                     - title

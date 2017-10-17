@@ -2,6 +2,9 @@ easy_admin:
     entities:
         Type:
             class: PhoneBundle\Entity\Type
+            list:
+                fields:
+                    - name
             form:
                 fields:
                     - name

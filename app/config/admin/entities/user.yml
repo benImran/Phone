@@ -4,7 +4,7 @@ easy_admin:
             class: PhoneBundle\Entity\User
             list:
                 fields:
-                    - username
+#                    - username
                     - email
                     - lastLogin
                     - nom
@@ -12,7 +12,7 @@ easy_admin:
 #                    - date_de_naissance
             form:
                 fields:
-                    - username
+#                    - username
                     - email
                     - enabled
                     - lastLogin

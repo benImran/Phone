@@ -4,7 +4,7 @@ easy_admin:
             class: PhoneBundle\Entity\Brand
             list:
                 fields:
-                    - id
+#                    - id
                     - name
                     - category
                     - products
