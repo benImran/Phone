@@ -1,6 +1,5 @@
 ### custom bundles usages ###
 vendor/*
-web/media/cache
 composer.phar
 
 ### macOS ###

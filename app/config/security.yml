@@ -1,5 +1,6 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
 security:
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
@@ -7,6 +8,7 @@ security:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         fos_userbundle:
                 id: fos_user.user_provider.username_email
@@ -50,10 +52,3 @@ security:
         - { path: ^/resetting, role: ROLE_ADMIN }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, role: ROLE_ADMIN }
-            # activate different ways to authenticate
-
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~

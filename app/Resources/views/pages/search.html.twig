@@ -19,30 +19,29 @@
                 <h2>Aucun Resultats</h2>
             {% else %}
                 <div class="col-6">
-            {% for list in pagination %}
-                  <a href="{{ path("product_sl", { "slug": list.slug}) }}">
-                    <div class="row product">
-                        <div class="col-2">
-                            <div class="img">
-                                <img src="{{ asset("/uploads/images/products/#{list.image}") }}" alt="iphone">
+                    {% for list in pagination %}
+                        <a href="{{ path("product_sl", { "slug": list.slug}) }}">
+                            <div class="row product">
+                                <div class="col-2">
+                                    <div class="img">
+                                        <img src="{{ asset("/uploads/images/products/#{list.image}") }}" alt="iphone">
+                                    </div>
+                                    <h3>{{ list.brand }}</h3>
+                                    <p class="subtitle">{{ list.title|raw }}</p>
+                                    <p class="description">{{ list.abstract|raw }}</p>
+                                    <p class="price">{{ list.rate }}€ TTC</p>
+                                    <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
+                                </div>
                             </div>
-                            <h3>{{ list.brand }}</h3>
-                            <p class="subtitle">{{ list.title|raw }}</p>
-                            <p class="description">{{ list.abstract|raw }}</p>
-                            <p class="price">{{ list.rate }}€ TTC</p>
-                            <a class="panier-listing-product" href="{{ path('panier_add', { 'id': list.id }) }}">+<i></i></a>
-                        </div>
-                    </div>
-                  </a>
-            {% endfor %}
+                        </a>
+                    {% endfor %}
                 </div>
             {% endif %}
         </div>
     </div>
-                <div class="navigation">
-                    {{ knp_pagination_render(pagination) }}
-                </div>
-
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
     </body>
     </html>
 {% endblock %}
